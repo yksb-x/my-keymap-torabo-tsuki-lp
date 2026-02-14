@@ -184,11 +184,11 @@
 
         L4_Num {
             bindings = <
-&none   &none   &none   &none   &none  &none                    &none      &none   &none   &none   &none      &none
-&none   &none   &trans  &none   &none  &none                    &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none
-&none   &trans  &trans  &trans  &none  &none  &none   &none     &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS   &none
-&trans  &none   &none   &none   &none  &none  &trans  &kp BSPC  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER  &none
-&trans  &none   &none   &none   &none  &none  &trans  &kp DOT   &kp N0     &none   &none   &none   &none      &none
+&none   &none   &none   &none   &none   &none                    &none      &none   &none   &none   &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                   &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none
+&trans  &trans  &trans  &trans  &trans  &trans &trans  &none     &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS   &none
+&trans  &trans  &trans  &trans  &trans  &trans &trans  &kp BSPC  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER  &none
+&trans  &trans  &trans  &trans  &trans  &trans &trans  &kp DOT   &kp N0     &none   &none   &none   &none      &none
             >;
         };
 
@@ -199,30 +199,30 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans           &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL   &trans          &trans          &trans           &trans   &trans
-            >;
+            >;d
         };
 
-        L5_Func {
+        L6_Func {
             bindings = <
 &none   &none       &none          &none             &none        &none                        &none             &none         &none        &none         &none             &none
 &none   &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT  &kp JP_RBKT                  &kp JP_YEN        &kp JP_UNDER  &none        &none         &kp LS(NUMBER_5)  &none
 &none   &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)  &kp JP_LPAR  &kp JP_RPAR  &none   &none   &kp LS(NUMBER_3)  &kp JP_CARET  &kp JP_AST   &kp JP_SLASH  &none             &none
-&trans  &none       &kp JP_QUES    &kp JP_COLON      &kp JP_LT    &kp JP_GT    &none   &none   &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &none             &trans
-&trans  &none       &none          &none             &none        &none        &trans  &trans  &none             &none         &none        &none         &none             &trans
+&trans  &trans      &kp JP_QUES    &kp JP_COLON      &kp JP_LT    &kp JP_GT    &none   &none   &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &trans            &trans
+&trans  &trans      &trans         &trans            &trans       &trans       &trans  &trans  &trans            &trans        &trans       &trans        &trans            &trans
             >;
         };
 
-        L6_BT {
+        L7_BTandFunc {
             bindings = <
-&none   &none   &none   &none   &none   &none                 &none         &none         &none         &none         &none         &none
-&none   &none   &none   &none   &none   &none                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &none  &none  &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12
-&trans  &none   &none   &none   &none   &none   &none  &none  &none         &none         &none         &none         &none         &trans
-&trans  &none   &none   &none   &none   &none   &none  &none  &none         &trans        &trans        &none         &none         &trans
+&none         &none         &none         &none         &none         &none                      &none   &none   &none   &none    &none    &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR                 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6
+&trans        &trans        &trans        &trans        &trans        &trans      &none   &none  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans        &trans        &trans        &trans        &trans        &trans      &trans  &none  &none   &none   &none   &none    &none    &trans
+&trans        &trans        &trans        &trans        &trans        &trans      &trans  &none  &none   &none   &none   &none    &none    &trans
             >;
         };
 
-        layer_8 {
+        L8_TEST {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans  &trans  &trans  &trans
