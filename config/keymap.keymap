@@ -185,7 +185,7 @@
         L5_Func {
             bindings = <
 &none  &none       &none          &none              &none         &none                       &none             &none         &none        &none         &none             &none
-&none  &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)   &none         &none                       &none             &kp JP_UNDER  &none        &none         &kp LS(NUMBER_5)  &none
+&none  &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)   &none         &none                       &kp JP_YEN        &kp JP_UNDER  &none        &none         &kp LS(NUMBER_5)  &none
 &none  &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)   &kp JP_LPAR   &kp JP_RPAR   &none  &none  &kp LS(NUMBER_3)  &kp JP_CARET  &kp JP_AST   &kp JP_SLASH  &none             &none
 &none  &none       &kp JP_QUES    &kp JP_COLON       &kp JP_LT     &kp JP_GT     &none  &none  &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &none             &none
 &none  &none       &none          &none              &none         &none         &none  &none  &none             &none         &none        &none         &none             &none
