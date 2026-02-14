@@ -97,6 +97,12 @@
             bindings = <&mo 8>;
             key-positions = <56 60>;
         };
+
+        BTclr {
+            bindings = <&bt BT_CLR>;
+            key-positions = <44 45>;
+            layers = <7>;
+        };
     };
 
     macros {
@@ -184,11 +190,11 @@
 
         L4_Num {
             bindings = <
-&none   &none   &none   &none   &none   &none                    &none      &none   &none   &none   &none      &none
-&trans  &trans  &trans  &trans  &trans  &trans                   &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none
-&trans  &trans  &trans  &trans  &trans  &trans &trans  &none     &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS   &none
-&trans  &trans  &trans  &trans  &trans  &trans &trans  &kp BSPC  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER  &none
-&trans  &trans  &trans  &trans  &trans  &trans &trans  &kp DOT   &kp N0     &none   &none   &none   &none      &none
+&none   &none   &none   &none   &none   &none                     &none      &none   &none   &none   &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &none     &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS   &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER  &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DOT   &kp N0     &none   &none   &none   &none      &none
             >;
         };
 
@@ -214,11 +220,11 @@
 
         L7_BTandFunc {
             bindings = <
-&none         &none         &none         &none         &none         &none                         &none   &none   &none   &none    &none    &none
-&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none   &none   &kp F1  &kp F2   &kp F3   &kp F4
-&trans        &trans        &trans        &trans        &trans        &trans        &none   &none   &none   &none   &kp F5  &kp F6   &kp F7   &kp F8
-&trans        &trans        &trans        &trans        &trans        &trans        &trans  &none   &none   &none   &kp F9  &kp F10  &kp F11  &kp F12
-&trans        &trans        &trans        &trans        &trans        &trans        &trans  &none   &none   &none   &none   &none    &none    &trans
+&none   &none         &none         &none         &none         &none                        &none  &none  &none   &none    &none    &none
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                 &none  &none  &kp F1  &kp F2   &kp F3   &kp F4
+&trans  &trans        &trans        &trans        &trans        &trans        &none   &none  &none  &none  &kp F5  &kp F6   &kp F7   &kp F8
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &none  &none  &none  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &none  &none  &none  &none   &none    &none    &trans
             >;
         };
 
