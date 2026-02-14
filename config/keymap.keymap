@@ -199,7 +199,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans           &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL   &trans          &trans          &trans           &trans   &trans
-            >;d
+            >;
         };
 
         L6_Func {
