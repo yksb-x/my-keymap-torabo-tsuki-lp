@@ -176,19 +176,19 @@
             bindings = <
 &none  &none           &none           &none      &none  &none                                    &none      &none   &none   &none   &none      &none
 &none  &none           &kp UP_ARROW    &none      &none  &none                                    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp ASTRK  &none
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &none  &none  &none              &none          &kp N0     &kp N4  &kp N5  &kp N6  &kp PLUS   &kp MINUS
-&none  &none           &none           &none      &none  &none  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp DOT    &kp N1  &kp N2  &kp N3  &kp SLASH  &none
-&none  &none           &none           &none      &none  &none  &none              &none          &none      &none   &none   &none   &none      &none
+&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &none  &none  &none              &none          &none      &kp N4  &kp N5  &kp N6  &kp PLUS   &kp MINUS
+&none  &none           &none           &none      &none  &none  &kp RIGHT_BRACKET  &kp BACKSLASH  &none      &kp N1  &kp N2  &kp N3  &kp SLASH  &none
+&none  &none           &none           &none      &none  &none  &none              &none          &none      &none   &none   &kp N0  &kp DOT    &none
             >;
         };
 
         L5_Func {
             bindings = <
-&none  &none      &none          &none              &none  &none                        &none             &none  &none  &none  &none             &none
-&none  &kp SQT    &kp LS(SQT)    &kp LS(NUMBER_1)   &none  &none                        &kp JP_YEN        &none  &none  &none  &kp RS(NUMBER_5)  &none
-&none  &kp JP_AT  &kp SEMICOLON  &kp LS(NUMBER_4)   &none  &none          &none  &none  &kp RS(NUMBER_3)  &none  &none  &none  &none             &none
-&none  &none      &none          &kp LS(SEMICOLON)  &none  &kp BACKSLASH  &none  &none  &kp RS(NUMBER_7)  &none  &none  &none  &none             &none
-&none  &none      &none          &none              &none  &none          &none  &none  &none             &none  &none  &none  &none             &none
+&none  &none       &none          &none              &none         &none                       &none             &none         &none        &none         &none             &none
+&none  &kp JP_SQR  &kp JP_DQUOT   &kp LS(NUMBER_1)   &kp JP_LBKT   &kp JP_RBKT                 &kp JP_YEN        &kp JP_UNDER  &none        &none         &kp RS(NUMBER_5)  &none
+&none  &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)   &kp JP_LPAR   &kp JP_RPAR   &none  &none  &kp RS(NUMBER_3)  &kp JP_CARET  &kp JP_AST   &kp JP_SLASH  &none             &none
+&none  &none       &kp JP_QUES    &kp JP_COLON       &kp JP_LT     &kp JP_GT     &none  &none  &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &none             &none
+&none  &none       &none          &none              &none         &none         &none  &none  &none             &none         &none        &none         &none             &none
             >;
         };
 
