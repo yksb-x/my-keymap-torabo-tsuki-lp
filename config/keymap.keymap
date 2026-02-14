@@ -159,7 +159,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /L0_Main {
+        L0_Main {
             bindings = <
 &trans  &trans                            &trans          &trans          &trans  &trans                                                 &trans           &trans  &trans           &trans           &trans                                &trans
 &none   &kp Q                             &kp W           &kp E           &kp R   &kp T                                                  &kp Y            &kp U   &kp I            &kp O            &kp P                                 &none
