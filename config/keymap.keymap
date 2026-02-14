@@ -84,8 +84,20 @@
         compatible = "zmk,combos";
 
         BT {
-            bindings = <&mo 6>;
+            bindings = <&mo 7>;
             key-positions = <57 60>;
+        };
+
+        Esc {
+            bindings = <&kp ESC>;
+            key-positions = <13 14>;
+            slow-release;
+            layers = <0>;
+        };
+
+        TEST {
+            bindings = <&mo 8>;
+            key-positions = <56 60>;
         };
     };
 
@@ -95,7 +107,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 5>;
+            bindings = <&tog_off 6>;
             label = "exit_AML";
         };
 
@@ -134,11 +146,11 @@
 
         layer_0 {
             bindings = <
-&trans                           &trans  &trans  &trans  &trans    &trans                                                                                         &trans       &trans  &trans     &trans   &trans                &trans
-&kp ESC                          &kp Q   &kp W   &kp E   &kp R     &kp T                                                                                          &kp Y        &kp U   &kp I      &kp O    &kp P                 &kp DELETE
-&kp TAB                          &kp A   &kp S   &kp D   &kp F     &kp G        &trans                                     &trans                                 &kp H        &kp J   &kp K      &kp L    &kp MINUS             &kp RWIN
-&mt_exit_AML_on_tap LCTRL LCTRL  &kp Z   &kp X   &kp C   &kp V     &kp B        &kp LS(N8)                                 &kp RS(N9)                             &kp N        &kp M   &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH  &mt_exit_AML_on_tap RCTRL RCTRL
-&kp LEFT_ALT                     &none   &none   &none   &kp BSPC  &lt 4 SPACE  &mt_exit_AML_on_tap LEFT_SHIFT LANGUAGE_1  &mt_exit_AML_on_tap RSHIFT LANGUAGE_2  &lt 5 ENTER  &trans  &trans     &none    &none                 &kp RIGHT_ALT
+&trans  &trans                            &trans          &trans          &trans  &trans                                                 &trans           &trans  &trans           &trans           &trans                                &trans
+&none   &kp Q                             &kp W           &kp E           &kp R   &kp T                                                  &kp Y            &kp U   &kp I            &kp O            &kp P                                 &none
+&none   &mt_exit_AML_on_tap LCTRL A       &mt LEFT_ALT S  &mt LEFT_GUI D  &kp F   &kp G        &trans              &trans                &kp H            &kp J   &mt RIGHT_GUI K  &mt RIGHT_ALT L  &mt_exit_AML_on_tap RCTRL KP_MINUS    &none
+&none   &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X           &kp C           &kp V   &kp B        &trans              &trans                &kp N            &kp M   &kp COMMA        &kp DOT          &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &none
+&none   &none                             &none           &mo 5           &mo 3   &lt 4 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 ENTER  &lt 6 BACKSPACE  &trans  &trans           &none            &none                                 &none
             >;
         };
 
@@ -164,31 +176,41 @@
 
         L3_Mouse {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans                  &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                  &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &mo 2   &mkp LCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 1   &trans
-&trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &mo 2      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 1   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
             >;
         };
 
         L4_Num {
             bindings = <
-&none   &none           &none           &none      &none  &none                                    &none      &none   &none   &none   &none      &none
-&none   &none           &kp UP_ARROW    &none      &none  &none                                    &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp ASTRK  &none
-&none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &none  &none  &none              &none          &none      &kp N4  &kp N5  &kp N6  &kp PLUS   &kp MINUS
-&trans  &none           &none           &none      &none  &none  &kp RIGHT_BRACKET  &kp BACKSLASH  &none      &kp N1  &kp N2  &kp N3  &kp SLASH  &trans
-&trans  &none           &none           &none      &none  &none  &trans             &trans         &none      &none   &none   &kp N0  &kp DOT    &trans
+&none   &none   &none   &none   &none  &none                    &none      &none   &none   &none   &none      &none
+&none   &none   &trans  &none   &none  &none                    &kp SLASH  &kp N7  &kp N8  &kp N9  &kp MINUS  &none
+&none   &trans  &trans  &trans  &none  &none  &none   &none     &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS   &none
+&trans  &none   &none   &none   &none  &none  &trans  &kp BSPC  &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp ENTER  &none
+&trans  &none   &none   &none   &none  &none  &trans  &kp DOT   &kp N0     &none   &none   &none   &none      &none
+            >;
+        };
+
+        L5_Arrow {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans    &trans          &trans          &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL   &trans          &trans          &trans           &trans   &trans
             >;
         };
 
         L5_Func {
             bindings = <
-&none   &none       &none          &none              &none         &none                         &none             &none         &none        &none         &none             &none
-&none   &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)   &kp JP_LBKT   &kp JP_RBKT                   &kp JP_YEN        &kp JP_UNDER  &none        &none         &kp LS(NUMBER_5)  &none
-&none   &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)   &kp JP_LPAR   &kp JP_RPAR   &none   &none   &kp LS(NUMBER_3)  &kp JP_CARET  &kp JP_AST   &kp JP_SLASH  &none             &none
-&trans  &none       &kp JP_QUES    &kp JP_COLON       &kp JP_LT     &kp JP_GT     &none   &none   &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &none             &trans
-&trans  &none       &none          &none              &none         &none         &trans  &trans  &none             &none         &none        &none         &none             &trans
+&none   &none       &none          &none             &none        &none                        &none             &none         &none        &none         &none             &none
+&none   &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT  &kp JP_RBKT                  &kp JP_YEN        &kp JP_UNDER  &none        &none         &kp LS(NUMBER_5)  &none
+&none   &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)  &kp JP_LPAR  &kp JP_RPAR  &none   &none   &kp LS(NUMBER_3)  &kp JP_CARET  &kp JP_AST   &kp JP_SLASH  &none             &none
+&trans  &none       &kp JP_QUES    &kp JP_COLON      &kp JP_LT    &kp JP_GT    &none   &none   &kp JP_AMPS       &kp JP_EQUAL  &kp JP_PLUS  &kp JP_MINUS  &none             &trans
+&trans  &none       &none          &none             &none        &none        &trans  &trans  &none             &none         &none        &none         &none             &trans
             >;
         };
 
@@ -199,6 +221,16 @@
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &none  &none  &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12
 &trans  &none   &none   &none   &none   &none   &none  &none  &none         &none         &none         &none         &none         &trans
 &trans  &none   &none   &none   &none   &none   &none  &none  &none         &trans        &trans        &none         &none         &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RGUI  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
