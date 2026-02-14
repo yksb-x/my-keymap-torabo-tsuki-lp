@@ -12,7 +12,7 @@
 #define JP_PIPE  LS(INT3)       // |
 #define JP_AT    LBKT           // @
 #define JP_LBKT  RBKT           // [
-#define JP_RBKT  NONUS_HASH     // ]
+#define JP_RBKT  BACKSLASH      // ]
 #define JP_COLON SQT            // :
 #define JP_PLUS  LS(SEMICOLON)  // +
 #define JP_AST   LS(SQT)        // *
