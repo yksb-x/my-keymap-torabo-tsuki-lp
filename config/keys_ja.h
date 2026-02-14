@@ -21,7 +21,7 @@
 #define JP_MINUS MINUS          // -
 #define JP_LT    LS(COMMA)      // <
 #define JP_GT    LS(DOT)        // >
-#define JP_SLASH SLASH          // /
+#define JP_SLASH SLASH          // ／
 #define JP_QUES  LS(SLASH)      // ?
 #define JP_COMMA COMMA          // ,
 #define JP_DOT   DOT            // .
