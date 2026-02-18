@@ -247,11 +247,11 @@
 
         L7_Symbol {
             bindings = <
-&none   &none       &none          &none             &none                 &none                                    &none             &none         &none   &none   &none             &none
-&none   &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT           &kp JP_RBKT                              &kp JP_YEN        &kp JP_UNDER  &none   &none   &kp LS(NUMBER_5)  &none
-&none   &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)  &hm LESS_THAN LS(N8)  &hm GREATER_THAN RS(N9)  &none   &none   &kp LS(NUMBER_3)  &none         &none   &none   &kp TILDE         &none
-&trans  &kp CARET   &kp ASTERISK   &kp JP_COLON      &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none   &kp JP_AMPS       &kp PIPE      &none   &none   &kp SLASH         &trans
-&trans  &trans      &trans         &trans            &trans                &trans                   &trans  &trans  &trans            &trans        &trans  &trans  &trans            &trans
+&none   &none       &none          &none             &none                 &none                                    &none             &none         &none   &none      &none             &none
+&none   &kp JP_SQT  &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT           &kp JP_RBKT                              &kp JP_YEN        &kp JP_UNDER  &none   &none      &kp LS(NUMBER_5)  &none
+&none   &kp JP_AT   &kp SEMICOLON  &kp LS(NUMBER_4)  &hm LESS_THAN LS(N8)  &hm GREATER_THAN RS(N9)  &none   &none   &kp LS(NUMBER_3)  &none         &none   &kp TILDE  &kp TILDE         &none
+&trans  &kp CARET   &kp ASTERISK   &kp JP_COLON      &kp LEFT_BRACE        &kp RIGHT_BRACE          &none   &none   &kp JP_AMPS       &kp PIPE      &none   &none      &kp SLASH         &trans
+&trans  &trans      &trans         &trans            &trans                &trans                   &trans  &trans  &trans            &trans        &trans  &trans     &trans            &trans
             >;
         };
 
