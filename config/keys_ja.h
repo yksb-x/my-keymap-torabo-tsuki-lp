@@ -25,3 +25,6 @@
 #define JP_QUES  LS(SLASH)      // ?
 #define JP_COMMA COMMA          // ,
 #define JP_DOT   DOT            // .
+#define JP_LBRACE LS(RBKT)          // {
+#define JP_RBRACE LS(BACKSLASH)            // }
+#define JP_BQT LEFT_BRACE            // `
