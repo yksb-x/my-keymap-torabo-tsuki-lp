@@ -109,6 +109,11 @@
             layers = <3 4>;
             require-prior-idle-ms = <50>;
         };
+
+        MML {
+            bindings = <&mo 4>;
+            key-positions = <57 56>;
+        };
     };
 
     macros {
