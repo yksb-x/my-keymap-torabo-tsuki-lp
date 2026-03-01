@@ -119,6 +119,12 @@
             bindings = <&mo 6>;
             key-positions = <27 57>;
         };
+
+        BackSpace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <58 59>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -257,11 +263,11 @@
 
         L6_Cursor {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans    &trans          &trans          &trans           &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                   &trans    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans    &trans          &trans          &trans           &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL  &trans    &trans          &trans          &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans      &trans                   &trans    &trans          &trans          &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans      &trans                   &trans    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans   &trans
+&trans  &trans  &trans  &trans  &kp RSHIFT  &trans  &trans  &trans   &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans   &trans    &trans          &trans          &trans           &trans   &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp DEL  &trans    &trans          &trans          &trans           &trans   &trans
             >;
         };
 
