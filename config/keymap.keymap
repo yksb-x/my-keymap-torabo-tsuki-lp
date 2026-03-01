@@ -112,7 +112,12 @@
 
         MML {
             bindings = <&mo 4>;
-            key-positions = <57 56>;
+            key-positions = <57 28>;
+        };
+
+        Cursor {
+            bindings = <&mo 6>;
+            key-positions = <27 57>;
         };
     };
 
@@ -224,7 +229,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans      &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans      &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &ml 1 MCLK  &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans  &none   &trans  &trans  &trans  &trans  &mkp LCLK  &ml 1 MCLK  &mkp RCLK  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans     &trans  &trans
             >;
@@ -250,7 +255,7 @@
             >;
         };
 
-        L6_Arrow {
+        L6_Cursor {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                   &trans    &trans          &trans          &trans           &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans                   &trans    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans   &trans
