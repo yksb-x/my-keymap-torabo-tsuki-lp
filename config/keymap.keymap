@@ -106,17 +106,17 @@
         x_scroll {
             bindings = <&mo 2>;
             key-positions = <35 34>;
-            layers = <3 4>;
+            layers = <3 5>;
             require-prior-idle-ms = <50>;
         };
 
         MML {
-            bindings = <&mo 4>;
+            bindings = <&mo 6>;
             key-positions = <57 28>;
         };
 
         Cursor {
-            bindings = <&mo 6>;
+            bindings = <&mo 7>;
             key-positions = <27 57>;
         };
 
@@ -207,7 +207,7 @@
 &none   &kp Q                             &kp W           &kp E           &kp R   &kp T                                                 &kp Y        &kp U   &kp I            &kp O            &kp P                                 &none
 &none   &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S  &hm LEFT_GUI D  &kp F   &kp G        &trans              &trans               &kp H        &kp J   &hm RIGHT_GUI K  &hm RIGHT_ALT L  &mt_exit_AML_on_tap RCTRL MINUS       &none
 &none   &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X           &kp C           &kp V   &kp B        &trans              &trans               &kp N        &kp M   &kp COMMA        &kp DOT          &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &none
-&none   &none                             &none           &mo 4           &mo 6   &lt 5 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 7 ENTER  &trans  &trans           &none            &none                                 &none
+&none   &none                             &none           &mo 6           &mo 7   &lt 4 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 7 ENTER  &trans  &trans           &none            &none                                 &none
             >;
         };
 
@@ -241,6 +241,16 @@
             >;
         };
 
+        L5_Num {
+            bindings = <
+&none   &none   &none   &none   &none   &none                          &none            &none        &none         &none       &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                         &kp N5           &kp N6       &kp N7        &kp N8      &kp N9     &trans
+&trans  &trans  &trans  &mo 7   &mo 6   &trans  &trans         &none   &hm_s PERIOD N0  &kp N1       &kp N2        &kp N3      &kp N4     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp C_AL_CALC  &trans  &kp JP_EQUAL     &kp JP_PLUS  &kp JP_MINUS  &kp JP_AST  &kp SLASH  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &mo 8            &none        &none         &none       &none      &trans
+            >;
+        };
+
         L4_MML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans      &trans     &trans  &trans
@@ -248,16 +258,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &ml 1 MCLK  &mkp RCLK  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans     &trans  &trans
-            >;
-        };
-
-        L5_Num {
-            bindings = <
-&none   &none   &none   &none   &none   &none                          &none            &none        &none         &none       &none      &none
-&trans  &trans  &trans  &trans  &trans  &trans                         &kp N5           &kp N6       &kp N7        &kp N8      &kp N9     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &none   &hm_s PERIOD N0  &kp N1       &kp N2        &kp N3      &kp N4     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp C_AL_CALC  &trans  &kp JP_EQUAL     &kp JP_PLUS  &kp JP_MINUS  &kp JP_AST  &kp SLASH  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans           &none        &none         &none       &none      &trans
             >;
         };
 
