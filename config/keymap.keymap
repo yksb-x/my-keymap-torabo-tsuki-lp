@@ -241,7 +241,7 @@
             >;
         };
 
-        L5_Num {
+        L4_Num {
             bindings = <
 &none   &none   &none   &none   &none   &none                          &none            &none        &none         &none       &none      &none
 &trans  &trans  &trans  &trans  &trans  &trans                         &kp N5           &kp N6       &kp N7        &kp N8      &kp N9     &trans
@@ -251,7 +251,7 @@
             >;
         };
 
-        L4_MML {
+        L5_MML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans      &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans      &trans     &trans  &trans
