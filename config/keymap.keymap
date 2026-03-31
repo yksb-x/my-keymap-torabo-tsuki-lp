@@ -206,8 +206,8 @@
 &trans                  &trans                            &trans              &trans              &trans  &trans                                                &trans       &trans  &trans               &trans               &trans                                &trans
 &kp LG(LC(LEFT_ARROW))  &hm LC(LEFT_SHIFT) Q              &hm LC(LEFT_ALT) W  &hm LS(LEFT_ALT) E  &kp R   &kp T                                                 &kp Y        &kp U   &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O  &hm RS(RIGHT_CONTROL) P               &kp RG(RC(RIGHT_ARROW))
 &kp LA(LS(ESC))         &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S      &hm LEFT_GUI D      &kp F   &kp G        &trans              &trans               &kp H        &kp J   &hm RIGHT_GUI K      &hm RIGHT_ALT L      &mt_exit_AML_on_tap RCTRL MINUS       &kp RA(ESC)
-&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V   &kp B        &trans              &trans               &kp N        &kp M   &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
-&none                   &none                             &none               &none               &mo 7   &lt 4 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 7 ENTER  &trans  &trans               &none                &none                                 &none
+&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V   &kp B        &none               &none                &kp N        &kp M   &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
+&none                   &none                             &none               &trans              &trans  &lt 4 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 7 ENTER  &trans  &trans               &none                &none                                 &none
             >;
         };
 
