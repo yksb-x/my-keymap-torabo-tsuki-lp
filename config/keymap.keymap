@@ -23,13 +23,16 @@
     >;
 };
 
+
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>;
+        /* &trackball から &pointing_device に修正 */
+        device = <&pointing_device>;
         input-processors = <&zip_temp_layer 3 10000>;
     };
 };
+
 
 / {
     input_processors {
