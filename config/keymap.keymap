@@ -32,6 +32,7 @@
             codes = <INPUT_REL_HWHEEL>;
             track-remainders;
         };
+
         zip_scroll_y_scaler: zip_scroll_y_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -42,19 +43,21 @@
     };
 };
 
-
 / {
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&kp RIGHT_ARROW>,
-                  <&kp LEFT_ARROW>,
-                  <&kp UP_ARROW>,
-                  <&kp DOWN_ARROW>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
         tick = <40>;
         wait-ms = <0>;
         tap-ms = <10>;
+
         // mode = <1>
         // threshold = <10>
         // max_threshold = <200>
@@ -62,13 +65,13 @@
     };
 };
 
-
 &pointing_listener {
     input-processors = <
         &zip_xy_scaler 1 1
         &zip_temp_layer 3 1500
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
+
     scroller2 {
         layers = <1>;
         input-processors = <
@@ -77,6 +80,7 @@
             &zip_scroll_y_scaler 1 5
         >;
     };
+
     scroller3 {
         layers = <2>;
         input-processors = <
@@ -87,13 +91,13 @@
     };
 };
 
-
 &pointing_device_split_listener {
     input-processors = <
         &zip_xy_scaler 1 100
         &zip_temp_layer 3 1500
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
+
     arrowball {
         status = "okay";
         layers = <2>;
@@ -112,16 +116,6 @@
             layers = <0>;
         };
 
-        BTandFunc {
-            bindings = <&mo 8>;
-            key-positions = <57 60>;
-        };
-
-        TEST {
-            bindings = <&mo 9>;
-            key-positions = <56 60>;
-        };
-
         BTclr {
             bindings = <&bt BT_CLR>;
             key-positions = <44 45>;
@@ -133,16 +127,6 @@
             key-positions = <35 34>;
             layers = <3 5>;
             require-prior-idle-ms = <50>;
-        };
-
-        MML {
-            bindings = <&mo 6>;
-            key-positions = <57 28>;
-        };
-
-        Cursor {
-            bindings = <&mo 7>;
-            key-positions = <27 57>;
         };
 
         BackSpace {
@@ -323,6 +307,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RGUI  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
+        L10_toraboArrow {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
