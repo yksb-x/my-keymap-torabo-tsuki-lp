@@ -23,18 +23,6 @@
     >;
 };
 
-
-
-/ {
-    /* 自分の作成したリスナー定義を維持 */
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&pointing_device>;
-        input-processors = <&zip_temp_layer 3 10000>;
-    };
-};
-
-
 / {
     input_processors {
         zip_scroll_x_scaler: zip_scroll_x_scaler {
