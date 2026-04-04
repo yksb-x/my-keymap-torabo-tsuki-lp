@@ -89,6 +89,12 @@
             &zip_scroll_y_scaler 0 3
         >;
     };
+
+    arrowball {
+        status = "okay";
+        layers = <10>;
+        input-processors = <&zip_keybind_keys>;
+    };
 };
 
 &pointing_device_split_listener {
