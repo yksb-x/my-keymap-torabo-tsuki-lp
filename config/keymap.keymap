@@ -140,6 +140,11 @@
             key-positions = <58 59>;
             layers = <0>;
         };
+
+        toggle_toraboArrow {
+            bindings = <&tog 10>;
+            key-positions = <65 64>;
+        };
     };
 
     macros {
