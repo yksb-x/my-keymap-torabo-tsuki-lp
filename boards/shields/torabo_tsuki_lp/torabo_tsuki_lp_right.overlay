@@ -24,7 +24,7 @@
     /* 自分の作成したリスナー定義を維持 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>;
+        device = <&pointing_device>;
         input-processors = <&zip_temp_layer 3 10000>;
     };
 };
