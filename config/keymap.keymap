@@ -44,7 +44,7 @@
             compatible = "zmk,input-processor-xy-to-key-mapper";
             #input-processor-cells = <0>;
             // 上に転がすと音量アップ、下に転がすと音量ダウン
-            y-codes = <KC_VOL_UP>, <KC_VOL_DN>;
+            y-codes = <C_VOL_UP>, <C_VOL_DN>;
         };
         // トラックボールの動きを矢印キーに変換する設定
         zip_xy_to_arrow_keys: zip_xy_to_arrow_keys {
