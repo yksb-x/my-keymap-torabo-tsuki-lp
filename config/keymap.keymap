@@ -72,7 +72,6 @@
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
     arrowball {
-        >;
         status = "okay";
         layers = <10>;
         input-processors = <
