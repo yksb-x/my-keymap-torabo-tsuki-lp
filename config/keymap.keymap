@@ -69,13 +69,9 @@
 };
 
 
-
-
-/* 本家の新しい名称 &pointing_listener を使いつつ、
-   中身は自分の「軸反転（INVERT）」の設定を適用する */
 &pointing_listener {
     input-processors = <
-        &zip_temp_layer 3 100000
+        &zip_temp_layer 3 5000
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
 
