@@ -92,6 +92,11 @@
         status = "disabled";
     };
 
+    pointing_device_split_listener: pointing_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
     vbatt: vbatt {
         // Disable default battery monitoring
         status = "disabled";
