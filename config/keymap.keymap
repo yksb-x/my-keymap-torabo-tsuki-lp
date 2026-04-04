@@ -72,12 +72,13 @@
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
     arrowball {
+        >;
         status = "okay";
         layers = <10>;
         input-processors = <
             &zip_keybind_keys
-            &zip_xy_scaler 0 0
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            /* 0 0 の代わりにこれを使う */
+            &zip_xy_discard
         >;
     };
     scroller2 {
