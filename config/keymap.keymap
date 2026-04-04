@@ -51,9 +51,9 @@
             compatible = "zmk,input-processor-xy-to-key-mapper";
             #input-processor-cells = <0>;
             // X軸（左右）の割り当て：左、右
-            x-codes = <KP_LEFT>, <KP_RIGHT>;
+            x-codes = <LEFT_ARROW>, <RIGHT_ARROW>;
             // Y軸（上下）の割り当て：上、下
-            y-codes = <KP_UP>, <KP_DOWN>;
+            y-codes = <UP_ARROW>, <DOWN_ARROW>;
         };
     };
 };
