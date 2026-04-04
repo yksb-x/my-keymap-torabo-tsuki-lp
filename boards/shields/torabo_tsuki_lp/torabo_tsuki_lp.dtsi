@@ -92,7 +92,7 @@
         status = "disabled";
     };
 
-    pointing_device_split_listener: pointing_listener {
+    pointing_device_split_listener: pointing_device_split_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
     };
