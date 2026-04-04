@@ -49,10 +49,10 @@
         #input-processor-cells = <0>;
         track_remainders;
         bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
+            <&kp LEFT_ARROW>,   /* +X (右) に動いた時に LEFT を送る */
+            <&kp RIGHT_ARROW>,  /* -X (左) に動いた時に RIGHT を送る */
+            <&kp DOWN_ARROW>,   /* +Y (上) に動いた時に DOWN を送る */
+            <&kp UP_ARROW>;     /* -Y (下) に動いた時に UP を送る */
 
         tick = <20>;
         wait-ms = <0>;
