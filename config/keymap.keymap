@@ -39,6 +39,22 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
+        // Y軸（上下）の動きを音量キーに変換する設定
+        zip_y_to_volume: zip_y_to_volume {
+            compatible = "zmk,input-processor-xy-to-key-mapper";
+            #input-processor-cells = <0>;
+            // 上に転がすと音量アップ、下に転がすと音量ダウン
+            y-codes = <KC_VOL_UP>, <KC_VOL_DN>;
+        };
+        // トラックボールの動きを矢印キーに変換する設定
+        zip_xy_to_arrow_keys: zip_xy_to_arrow_keys {
+            compatible = "zmk,input-processor-xy-to-key-mapper";
+            #input-processor-cells = <0>;
+            // X軸（左右）の割り当て：左、右
+            x-codes = <KP_LEFT>, <KP_RIGHT>;
+            // Y軸（上下）の割り当て：上、下
+            y-codes = <KP_UP>, <KP_DOWN>;
+        };
     };
 };
 
@@ -74,20 +90,22 @@
         &zip_temp_layer 3 1500
         &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
     >;
-    scroller2 {
+    volumedial {
+        status = "okay";
         layers = <1>;
         input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3
-            &zip_scroll_y_scaler 1 5
+            &zip_xy_scaler 1 2                              // 1. 感度調整（少し鈍くしたほうがダイヤルっぽくなります）
+            &zip_y_to_volume                                // 2. 音量操作に変換！
+            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)    // 3. 必要に応じて反転
         >;
     };
-    scroller3 {
+    arrowball {
+        status = "okay";
         layers = <2>;
         input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
+            &zip_xy_scaler 1 2         // 感度を少し落とすと誤爆が減ります
+            &zip_xy_to_arrow_keys      // 矢印キーに変換！
+            &zip_xy_transform (INPUT_TRANSFORM_Y_INVERT) 
         >;
     };
 };
