@@ -69,7 +69,11 @@
     arrowball {
         status = "okay";
         layers = <10>;
-        input-processors = <&zip_keybind_keys>;
+        input-processors = <
+            &zip_scroll_x_scaler 3 2 
+            &zip_scroll_y_scaler 1 2
+            &zip_keybind_keys
+        >;
         process-next;
     };
     arrowball_prevent {
