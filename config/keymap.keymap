@@ -66,16 +66,8 @@
 };
 
 &pointing_listener {
-    default {
-        status = "okay";
-        layers = <0>;
-        input-processors = <
-            &zip_xy_scaler 1 1
-            &zip_temp_layer 3 1500
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-        >;
-    };
     arrowball {
+        status = "okay";
         layers = <10>;
         input-processors = <&zip_keybind_keys>;
         process-next;
@@ -83,6 +75,14 @@
     arrowball_prevent {
         layers = <10>;
         input-processors = <&zip_xy_scaler 0 1>;
+    };
+    scroller3 {
+        layers = <2>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 1 5
+            &zip_scroll_y_scaler 0 3
+        >;
     };
     scroller2 {
         layers = <1>;
@@ -92,13 +92,13 @@
             &zip_scroll_y_scaler 1 5
         >;
     };
-
-    scroller3 {
-        layers = <2>;
+    default {
+        status = "okay";
+        layers = <0>;
         input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
+            &zip_xy_scaler 1 1
+            &zip_temp_layer 3 1500
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
     };
 };
