@@ -185,6 +185,7 @@
 
         not_exist: not_exist {
             compatible = "zmk,behavior-fixed-value";
+            label = "Not_Exist";
             #binding-cells = <0>;
             value = <0>;
         };
