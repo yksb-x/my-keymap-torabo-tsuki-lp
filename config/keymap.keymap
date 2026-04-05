@@ -77,12 +77,12 @@
     };
     arrowball {
         layers = <10>;
-        input-processors = <&zip_xy_scaler 1 50>;
+        input-processors = <&zip_keybind_keys>;
+        process-next;
     };
     arrowball_prevent {
         layers = <10>;
-        input-processors = <&zip_keybind_keys>;
-        process-next;
+        input-processors = <&zip_xy_scaler 0 1>;
     };
     scroller2 {
         layers = <1>;
