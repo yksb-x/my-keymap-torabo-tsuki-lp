@@ -75,10 +75,9 @@
         status = "okay";
         layers = <10>;
         input-processors = <
-            /* 1000回カウントしてやっと1ピクセル動く設定 */
-            /* これでマウスカーソルは実質止まりますが、データ自体は後ろに流れます */
-            &zip_xy_scaler 1 1000 
-            &zip_keybind_keys
+            &zip_keybind_keys // 1. 先にキーを発行（生データを使用）
+            &zip_xy_to_scroll_mapper // 2. 残った移動データを「スクロール」という別バケツに移す
+            // これで「マウス移動」というバケツが空になるので、カーソルは動きません
         >;
     };
     scroller2 {
