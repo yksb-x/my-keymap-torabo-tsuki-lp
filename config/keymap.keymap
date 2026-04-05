@@ -66,18 +66,23 @@
 };
 
 &pointing_listener {
-    input-processors = <
-        &zip_xy_scaler 1 1
-        &zip_temp_layer 3 1500
-        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-    >;
-    arrowball {
+    default {
         status = "okay";
-        layers = <10>;
+        layers = <0>;
         input-processors = <
-            &zip_xy_scaler 1 50
-            &zip_keybind_keys
+            &zip_xy_scaler 1 1
+            &zip_temp_layer 3 1500
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
+    };
+    arrowball {
+        layers = <10>;
+        input-processors = <&zip_xy_scaler 1 50>;
+    };
+    arrowball_prevent {
+        layers = <10>;
+        input-processors = <&zip_keybind_keys>;
+        process-next;
     };
     scroller2 {
         layers = <1>;
