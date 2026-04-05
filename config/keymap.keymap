@@ -54,12 +54,12 @@
             <&kp DOWN_ARROW>,   /* +Y (上) に動いた時に DOWN を送る */
             <&kp UP_ARROW>;     /* -Y (下) に動いた時に UP を送る */
 
-        tick = <50>;
+        tick = <20>;
         wait-ms = <0>;
         tap-ms = <10>;
 
         mode = <1>;
-        threshold = <50>;
+        // threshold = <10>;
         // max_threshold = <200>
         // max_pending_activations = <10>
     };
