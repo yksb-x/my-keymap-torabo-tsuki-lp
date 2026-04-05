@@ -59,7 +59,7 @@
         tap-ms = <10>;
 
         mode = <1>;
-        threshold = <1>
+        threshold = <1>;
         // max_threshold = <200>
         // max_pending_activations = <10>
     };
