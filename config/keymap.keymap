@@ -75,7 +75,7 @@
         status = "okay";
         layers = <10>;
         input-processors = <
-            &zip_xy_scaler 1 100
+            &zip_xy_scaler 1 50
             &zip_keybind_keys
         >;
     };
