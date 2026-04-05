@@ -75,7 +75,9 @@
         status = "okay";
         layers = <10>;
         input-processors = <
-            &zip_xy_scaler 0 1 
+            /* 1000回カウントしてやっと1ピクセル動く設定 */
+            /* これでマウスカーソルは実質止まりますが、データ自体は後ろに流れます */
+            &zip_xy_scaler 1 1000 
             &zip_keybind_keys
         >;
     };
