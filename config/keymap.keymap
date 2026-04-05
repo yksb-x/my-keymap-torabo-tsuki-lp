@@ -76,8 +76,11 @@
         layers = <10>;
         input-processors = <
             &zip_keybind_keys
-            /* 0 0 の代わりにこれを使う */
-            &zip_xy_scaler 1 1000
+            /* 移動データをスクロールデータに変換して「隔離」する */
+            &zip_xy_to_scroll_mapper
+            /* 隔離したスクロールデータを0倍にする */
+            &zip_scroll_x_scaler 0 1
+            &zip_scroll_y_scaler 0 1
         >;
     };
     scroller2 {
