@@ -184,17 +184,14 @@
         // "not_exist" 物理的に存在しないキーを区別するための挙動
 
         not_exist: not_exist {
-            compatible = "zmk,behavior-fixed-value";
-            label = "Not_Exist";
+            compatible = "zmk,behavior-none";
             #binding-cells = <0>;
-            value = <0>;
         };
 
         // "hm" (Home Row Mods) という名前のカスタム挙動を作る
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <300>;    // ① 時間：200msくらいが標準
             quick-tap-ms = <175>;       // ② 連打時の判定（任意）
@@ -204,7 +201,6 @@
 
         hm_s: hm_s {
             compatible = "zmk,behavior-hold-tap";
-            label = "HM_S";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <150>;
@@ -221,7 +217,6 @@
 
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
 
             #binding-cells = <2>;
@@ -232,7 +227,6 @@
 
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
-            label = "ML";
             bindings = <&mo>, <&mkp>;
 
             #binding-cells = <2>;
