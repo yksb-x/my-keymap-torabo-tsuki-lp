@@ -184,7 +184,7 @@
         // "not_exist" 物理的に存在しないキーを区別するための挙動
 
         not_exist: not_exist {
-            compatible = "zmk,behavior-none";
+            compatible = "zmk,behavior-transparent";
             #binding-cells = <0>;
         };
 
