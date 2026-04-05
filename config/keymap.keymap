@@ -53,10 +53,12 @@
             <&kp RIGHT_ARROW>,
             <&kp DOWN_ARROW>,
             <&kp UP_ARROW>;
+
         tick = <20>;
         wait-ms = <0>;
         tap-ms = <10>;
         mode = <1>;
+
         // threshold = <10>;
         // max_threshold = <200>
         // max_pending_activations = <10>
@@ -242,18 +244,18 @@
 &not_exist              &not_exist                        &not_exist          &not_exist          &not_exist  &not_exist                                            &not_exist   &not_exist  &not_exist           &not_exist           &not_exist                            &not_exist
 &kp LG(LC(LEFT_ARROW))  &hm LC(LEFT_SHIFT) Q              &hm LC(LEFT_ALT) W  &hm LS(LEFT_ALT) E  &kp R       &kp T                                                 &kp Y        &kp U       &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O  &hm RS(RIGHT_CONTROL) P               &kp RG(RC(RIGHT_ARROW))
 &kp LA(LS(ESC))         &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S      &hm LEFT_GUI D      &kp F       &kp G        &not_exist          &not_exist           &kp H        &kp J       &hm RIGHT_GUI K      &hm RIGHT_ALT L      &mt_exit_AML_on_tap RCTRL MINUS       &kp RA(ESC)
-&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V       &kp B        &trans              &to 10               &kp N        &kp M       &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
+&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V       &kp B        &to 0               &to 10               &kp N        &kp M       &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
 &none                   &none                             &none               &not_exist          &not_exist  &lt 4 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 7 ENTER  &not_exist  &not_exist           &none                &none                                 &none
             >;
         };
 
         L1_Yscroll {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
             >;
         };
 
@@ -279,11 +281,11 @@
 
         L4_Num {
             bindings = <
-&none   &none   &none   &none   &none   &none                          &none            &none        &none         &none       &none      &none
-&trans  &trans  &trans  &trans  &trans  &trans                         &kp N5           &kp N6       &kp N7        &kp N8      &kp N9     &trans
-&trans  &trans  &trans  &mo 6   &mo 5   &mo 8   &trans         &none   &hm_s PERIOD N0  &kp N1       &kp N2        &kp N3      &kp N4     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp C_AL_CALC  &trans  &kp JP_EQUAL     &kp JP_PLUS  &kp JP_MINUS  &kp JP_AST  &kp SLASH  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans           &none        &none         &none       &none      &trans
+&none   &none   &none   &none   &none   &none                           &none            &none        &none         &none       &none      &none
+&trans  &trans  &trans  &trans  &trans  &trans                          &kp N5           &kp N6       &kp N7        &kp N8      &kp N9     &trans
+&trans  &trans  &trans  &mo 6   &mo 5   &mo 8   &not_exist  &not_exist  &hm_s PERIOD N0  &kp N1       &kp N2        &kp N3      &kp N4     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &kp JP_EQUAL     &kp JP_PLUS  &kp JP_MINUS  &kp JP_AST  &kp SLASH  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans           &none        &none         &none       &none      &trans
             >;
         };
 
@@ -312,18 +314,18 @@
 &trans  &trans        &trans         &trans            &trans               &trans                               &trans            &trans        &trans  &trans      &trans            &trans
 &trans  &kp JP_SQT    &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT          &kp JP_RBKT                          &kp JP_YEN        &kp JP_UNDER  &none   &none       &kp LS(NUMBER_5)  &trans
 &trans  &kp JP_AT     &kp SEMICOLON  &kp LS(NUMBER_4)  &hm_s JP_LT JP_LPAR  &hm_s JP_GT JP_RPAR  &trans  &trans  &kp LS(NUMBER_3)  &none         &none   &kp JP_BQT  &kp JP_TILDE      &trans
-&trans  &kp JP_CARET  &kp JP_AST     &kp JP_COLON      &kp JP_LBRACE        &kp JP_RBRACE        &none   &none   &kp JP_AMPS       &kp JP_PIPE   &none   &none       &kp SLASH         &trans
+&trans  &kp JP_CARET  &kp JP_AST     &kp JP_COLON      &kp JP_LBRACE        &kp JP_RBRACE        &trans  &trans  &kp JP_AMPS       &kp JP_PIPE   &none   &none       &kp SLASH         &trans
 &trans  &trans        &trans         &trans            &trans               &trans               &trans  &trans  &trans            &trans        &trans  &trans      &trans            &trans
             >;
         };
 
         L8_BTandFunc {
             bindings = <
-&none   &none         &none         &none         &none         &none                                      &none         &none   &none    &none    &none    &none
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                               &kp C_MUTE    &kp F1  &kp F2   &kp F3   &kp F4   &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &none          &none         &kp C_VOL_UP  &kp F5  &kp F6   &kp F7   &kp F8   &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &kp C_BRI_DEC  &kp C_BRI_UP  &kp C_VOL_DN  &kp F9  &kp F10  &kp F11  &kp F12  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &none          &none         &none         &none   &none    &none    &none    &trans
+&none   &none         &none         &none         &none         &none                                 &none         &none   &none    &none    &none    &none
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                          &kp C_MUTE    &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &not_exist  &not_exist  &kp C_VOL_UP  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans      &trans      &kp C_VOL_DN  &kp F9  &kp F10  &kp F11  &kp F12  &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans      &trans      &none         &none   &none    &none    &none    &trans
             >;
         };
 
@@ -343,27 +345,27 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 11  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp A   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         L11_toraboZoom {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 12  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &to 12  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(B)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         L12_toraboVolume {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(C)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
