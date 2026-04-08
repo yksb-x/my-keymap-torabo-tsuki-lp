@@ -67,7 +67,7 @@
 
 // 右トラボ
 &pointing_listener {
-    arrowball {
+    arrowball_L11 {
         status = "okay";
         layers = <11>;
         input-processors = <
@@ -78,12 +78,12 @@
         process-next;
     };
 
-    arrowball_prevent {
+    arrowball_prevent_L11 {
         layers = <11>;
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    sodou_torabo {
+    sodou_torabo_L10 {
         status = "okay";
         layers = <10>;
         input-processors = <
@@ -93,7 +93,7 @@
         >;
     };
 
-    scroller3 {
+    scroller3_R {
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
@@ -102,7 +102,7 @@
         >;
     };
 
-    scroller2 {
+    scroller2_R {
         layers = <1>;
         input-processors = <
             &zip_xy_to_scroll_mapper
@@ -111,7 +111,7 @@
         >;
     };
 
-    sodou_torabo {
+    sodou_torabo_L0{
         status = "okay";
         layers = <0>;
         input-processors = <
@@ -125,7 +125,7 @@
 //左トラボ
 &pointing_device_split_listener {
 
-    sodou_torabo {
+    sodou_torabo_L11 {
         status = "okay";
         layers = <11>;
         input-processors = <
@@ -135,7 +135,7 @@
         >;
     };
 
-    arrowball {
+    arrowball_L10 {
         status = "okay";
         layers = <10>;
         input-processors = <
@@ -146,12 +146,12 @@
         process-next;
     };
 
-    arrowball_prevent {
+    arrowball_prevent_L10 {
         layers = <10>;
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    scroller3 {
+    scroller3_L {
         layers = <2>;
         input-processors = <
             &zip_xy_to_scroll_mapper
@@ -160,7 +160,7 @@
         >;
     };
 
-    scroller2 {
+    scroller2_L {
         layers = <1>;
         input-processors = <
             &zip_xy_to_scroll_mapper
@@ -169,7 +169,7 @@
         >;
     };
 
-    bidou_torabo {
+    bidou_torabo_L0 {
         status = "okay";
         layers = <0>;
         input-processors = <
