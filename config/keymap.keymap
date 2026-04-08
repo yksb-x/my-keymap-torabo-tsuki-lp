@@ -67,6 +67,24 @@
 
 // 右トラボ
 &pointing_listener {
+
+    scroller3_R {
+        layers = <2>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 1 5
+            &zip_scroll_y_scaler 0 3
+        >;
+    };
+
+    scroller2_R {
+        layers = <1>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3
+            &zip_scroll_y_scaler 1 5
+        >;
+    };
     arrowball_L11 {
         status = "okay";
         layers = <11>;
@@ -93,24 +111,6 @@
         >;
     };
 
-    scroller3_R {
-        layers = <2>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
-        >;
-    };
-
-    scroller2_R {
-        layers = <1>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3
-            &zip_scroll_y_scaler 1 5
-        >;
-    };
-
     sodou_torabo_L0{
         status = "okay";
         layers = <0>;
@@ -124,6 +124,24 @@
 
 //左トラボ
 &pointing_device_split_listener {
+
+    scroller3_L {
+        layers = <2>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3
+            &zip_scroll_y_scaler 1 5
+        >;
+    };
+
+    scroller2_L {
+        layers = <1>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 1 5
+            &zip_scroll_y_scaler 0 3
+        >;
+    };
 
     sodou_torabo_L11 {
         status = "okay";
@@ -151,29 +169,11 @@
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    scroller3_L {
-        layers = <2>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3
-            &zip_scroll_y_scaler 1 5
-        >;
-    };
-
-    scroller2_L {
-        layers = <1>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
-        >;
-    };
-
     bidou_torabo_L0 {
         status = "okay";
         layers = <0>;
         input-processors = <
-            &zip_xy_scaler 1 1000
+            &zip_xy_scaler 1 250
             &zip_temp_layer 3 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
