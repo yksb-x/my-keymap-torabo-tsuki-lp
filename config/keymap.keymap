@@ -72,6 +72,7 @@
     scroller_R18 {
         layers = <18>;
         input-processors = <
+            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 1 5
             &zip_scroll_y_scaler 0 3
@@ -81,6 +82,7 @@
     scroller_R17 {
         layers = <17>;
         input-processors = <
+            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
@@ -132,6 +134,7 @@
     scroller_L18 {
         layers = <18>;
         input-processors = <
+            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
@@ -141,6 +144,7 @@
     scroller_L17 {
         layers = <17>;
         input-processors = <
+            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 1 5
             &zip_scroll_y_scaler 0 3
