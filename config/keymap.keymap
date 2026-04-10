@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&mkp_input_listener { input-processors = <&zip_temp_layer 3 250>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 2 250>; };
 
 &zip_temp_layer {
     require-prior-idle-ms = <350>;
@@ -108,7 +108,7 @@
         layers = <10>;
         input-processors = <
             &zip_xy_scaler 1 1
-            &zip_temp_layer 3 1500
+            &zip_temp_layer 2 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
     };
@@ -150,7 +150,7 @@
         layers = <11>;
         input-processors = <
             &zip_xy_scaler 1 1
-            &zip_temp_layer 3 1500
+            &zip_temp_layer 2 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
     };
@@ -177,7 +177,7 @@
         layers = <0>;
         input-processors = <
             &zip_xy_scaler 1 50
-            &zip_temp_layer 3 1500
+            &zip_temp_layer 2 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
     };
