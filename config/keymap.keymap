@@ -201,7 +201,7 @@
         };
 
         x_scroll {
-            bindings = <&mo 0>;
+            bindings = <&mo 18>;
             key-positions = <35 34>;
             layers = <2 3>;
             require-prior-idle-ms = <50>;
@@ -316,7 +316,7 @@
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 14 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
 &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
             >;
@@ -326,7 +326,7 @@
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 14 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
 &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
             >;
