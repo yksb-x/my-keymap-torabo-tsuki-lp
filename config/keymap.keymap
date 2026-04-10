@@ -68,6 +68,24 @@
 // 右トラボ
 
 &pointing_listener {
+    scroller_R18 {
+        layers = <18>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 1 5
+            &zip_scroll_y_scaler 0 3
+        >;
+    };
+
+    scroller_R17 {
+        layers = <17>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3
+            &zip_scroll_y_scaler 1 5
+        >;
+    };
+
     arrowball_L11 {
         status = "okay";
         layers = <11>;
@@ -95,24 +113,6 @@
         >;
     };
 
-    scroller3_R {
-        layers = <2>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
-        >;
-    };
-
-    scroller2_R {
-        layers = <1>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3
-            &zip_scroll_y_scaler 1 5
-        >;
-    };
-
     sodou_torabo_L0 {
         status = "okay";
         layers = <0>;
@@ -127,6 +127,24 @@
 //左トラボ
 
 &pointing_device_split_listener {
+    scroller_L18 {
+        layers = <18>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3
+            &zip_scroll_y_scaler 1 5
+        >;
+    };
+
+    scroller_L17 {
+        layers = <17>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 1 5
+            &zip_scroll_y_scaler 0 3
+        >;
+    };
+
     sodou_torabo_L11 {
         status = "okay";
         layers = <11>;
@@ -154,29 +172,11 @@
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    scroller3_L {
-        layers = <2>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3
-            &zip_scroll_y_scaler 1 5
-        >;
-    };
-
-    scroller2_L {
-        layers = <1>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
-        >;
-    };
-
     bidou_torabo_L0 {
         status = "okay";
         layers = <0>;
         input-processors = <
-            &zip_xy_scaler 1 80
+            &zip_xy_scaler 1 50
             &zip_temp_layer 3 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
@@ -213,10 +213,6 @@
             layers = <0>;
         };
 
-        toggle_toraboArrow {
-            bindings = <&tog 10>;
-            key-positions = <65 64>;
-        };
     };
 
     macros {
@@ -306,7 +302,7 @@
             >;
         };
 
-        L4_Num {
+        L1_Num {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist       &not_exist   &not_exist    &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &kp N5           &kp N6       &kp N7        &kp N8      &kp N9      &trans
@@ -316,7 +312,7 @@
             >;
         };
 
-        L3_AML {
+        L2_AML {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
@@ -326,7 +322,7 @@
             >;
         };
 
-        L5_MML {
+        L3_MML {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
@@ -336,7 +332,7 @@
             >;
         };
 
-        L6_Cursor {
+        L4_Cursor {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist      &not_exist      &not_exist       &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &kp HOME    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp END     &trans
@@ -346,7 +342,7 @@
             >;
         };
 
-        L7_Symbol {
+        L5_Symbol {
             bindings = <
 &not_exist  &not_exist    &not_exist     &not_exist        &not_exist           &not_exist                                   &not_exist        &not_exist    &not_exist  &not_exist  &not_exist        &not_exist
 &trans      &kp JP_SQT    &kp JP_DQUOT   &kp LS(NUMBER_1)  &kp JP_LBKT          &kp JP_RBKT                                  &kp JP_YEN        &kp JP_UNDER  &none       &none       &kp LS(NUMBER_5)  &trans
@@ -356,7 +352,7 @@
             >;
         };
 
-        L8_BTandFunc {
+        L6_Func {
             bindings = <
 &not_exist  &not_exist    &not_exist    &not_exist    &not_exist    &not_exist                            &not_exist    &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                          &kp C_MUTE    &kp F1      &kp F2      &kp F3      &kp F4      &trans
@@ -366,107 +362,17 @@
             >;
         };
 
-        L9_TEST {
+        L7_BT {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &kp RGUI    &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 11      &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(Z)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
             >;
         };
 
-        layer_14 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_13 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        L10_toraboArrow {
-            bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 11      &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(A)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
-            >;
-        };
-
-        L11_toraboZoom {
-            bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 12      &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(B)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
-            >;
-        };
-
-        L12_toraboVolume {
-            bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 0       &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(C)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
-            >;
-        };
-
-        layer_15 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_16 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_17 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_18 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        L1_Yscroll {
+        L8_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
@@ -476,7 +382,97 @@
             >;
         };
 
-        L2_Xscroll {
+        L9_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L10_L_Arrow_R_Torabo {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 11      &trans      &trans      &trans      &trans      &trans      &trans
+&kp LS(A)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L11_L_Torabo_R_Arrow {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 12      &trans      &trans      &trans      &trans      &trans      &trans
+&kp LS(B)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L12_L_Blank_R_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 0       &trans      &trans      &trans      &trans      &trans      &trans
+&kp LS(C)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L13_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L14_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L15_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L16_Blank {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L17_Yscroll {
+            bindings = <
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+            >;
+        };
+
+        L18_Xscroll {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
