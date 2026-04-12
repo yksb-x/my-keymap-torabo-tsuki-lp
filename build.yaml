@@ -2,10 +2,10 @@ include:
   - board: bmp_boost
     shield: torabo_tsuki_lp_left
     snippet: "studio-rpc-usb-uart input-trackball input-split input-split-listener"
-    artifact-name: torabo_tsuki_lp_double_ball_left_peripheral
+    artifact-name: dual_torabo_tsuki_lp_left_peripheral
   - board: bmp_boost
     shield: torabo_tsuki_lp_right
     snippet: "studio-rpc-usb-uart split-central input-trackball input-listener input-split-listener"
-    artifact-name: torabo_tsuki_lp_double_ball_right_central
+    artifact-name: dual_torabo_tsuki_lp_right_central
   - board: bmp_boost
     shield: settings_reset
