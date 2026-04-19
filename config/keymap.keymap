@@ -297,11 +297,11 @@
 
         L0_Main {
             bindings = <
-&not_exist              &not_exist                        &not_exist          &not_exist          &not_exist  &not_exist                                            &not_exist   &not_exist  &not_exist           &not_exist           &not_exist                            &not_exist
-&kp LG(LC(LEFT_ARROW))  &hm LC(LEFT_SHIFT) Q              &hm LC(LEFT_ALT) W  &hm LS(LEFT_ALT) E  &kp R       &kp T                                                 &kp Y        &kp U       &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O  &hm RS(RIGHT_CONTROL) P               &kp RG(RC(RIGHT_ARROW))
-&kp LA(LS(ESC))         &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S      &hm LEFT_GUI D      &kp F       &kp G        &not_exist          &not_exist           &kp H        &kp J       &hm RIGHT_GUI K      &hm RIGHT_ALT L      &mt_exit_AML_on_tap RCTRL MINUS       &kp RA(ESC)
-&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V       &kp B        &to 0               &to 10               &kp N        &kp M       &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
-&none                   &none                             &none               &not_exist          &not_exist  &lt 1 SPACE  &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 5 ENTER  &not_exist  &not_exist           &none                &none                                 &none
+&not_exist              &not_exist                        &not_exist          &not_exist          &not_exist          &not_exist                                                   &not_exist           &not_exist           &not_exist           &not_exist           &not_exist                            &not_exist
+&kp LG(LC(LEFT_ARROW))  &hm LC(LEFT_SHIFT) Q              &hm LC(LEFT_ALT) W  &hm LS(LEFT_ALT) E  &hm LS(LEFT_GUI) R  &kp T                                                        &kp Y                &hm RS(RIGHT_GUI) U  &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O  &hm RS(RIGHT_CONTROL) P               &kp RG(RC(RIGHT_ARROW))
+&kp LA(LS(ESC))         &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S      &hm LEFT_GUI D      &hm LA(LEFT_GUI) F  &hm LC(LEFT_GUI) G  &not_exist          &not_exist           &hm RC(RIGHT_GUI) H  &hm RA(RIGHT_GUI) J  &hm RIGHT_GUI K      &hm RIGHT_ALT L      &mt_exit_AML_on_tap RCTRL MINUS       &kp RA(ESC)
+&kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V               &kp B               &to 0               &to 10               &kp N                &kp M                &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
+&none                   &none                             &none               &not_exist          &not_exist          &lt 1 SPACE         &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 5 ENTER          &not_exist           &not_exist           &none                &none                                 &none
             >;
         };
 
@@ -317,11 +317,11 @@
 
         L2_AML {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist     &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans         &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &kp RC(C)   &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &kp RC(V)      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp RC(X)   &trans      &trans       &trans      &kp RC(RS(V))  &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans         &trans
             >;
         };
 
@@ -329,7 +329,7 @@
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &none       &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
 &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
             >;
@@ -337,21 +337,21 @@
 
         L4_Cursor {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist      &not_exist      &not_exist       &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &kp HOME    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp END     &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &kp RC(C)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)   &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp RC(X)   &trans          &trans          &trans           &trans      &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &kp DEL     &trans      &not_exist      &not_exist      &trans           &trans      &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist      &not_exist      &not_exist       &not_exist     &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &kp HOME    &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp END        &trans
+&trans      &trans      &trans      &none       &trans      &trans      &not_exist  &not_exist  &kp RC(C)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp RC(X)   &trans          &trans          &trans           &kp RC(RS(V))  &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &none       &trans      &kp DEL     &trans      &not_exist      &not_exist      &trans           &trans         &trans
             >;
         };
 
         L5_Symbol {
             bindings = <
-&not_exist  &not_exist                               &not_exist                  &not_exist                     &not_exist           &not_exist                                   &not_exist        &not_exist    &not_exist            &not_exist            &not_exist                             &not_exist
-&trans      &hm LC(LEFT_SHIFT) JP_SQT                &hm LC(LEFT_ALT) JP_DQUOT   &hm LS(LEFT_ALT) LS(NUMBER_1)  &kp JP_LBKT          &kp JP_RBKT                                  &kp JP_YEN        &kp JP_UNDER  &hm RS(RIGHT_ALT) I   &hm RC(RIGHT_ALT) O   &hm RS(RIGHT_CONTROL) LS(NUMBER_5)     &trans
-&trans      &mt_exit_AML_on_tap LCTRL JP_AT          &hm LEFT_ALT SEMICOLON      &hm LEFT_GUI LS(NUMBER_4)      &hm_s JP_LT JP_LPAR  &hm_s JP_GT JP_RPAR  &not_exist  &not_exist  &kp LS(NUMBER_3)  &none         &hm RIGHT_GUI K       &hm RIGHT_ALT JP_BQT  &mt_exit_AML_on_tap RCTRL JP_TILDE     &trans
-&trans      &mt_exit_AML_on_tap LEFT_SHIFT JP_CARET  &kp JP_AST                  &kp JP_COLON                   &kp JP_LBRACE        &kp JP_RBRACE        &trans      &trans      &kp JP_AMPS       &kp JP_PIPE   &none                 &none                 &mt_exit_AML_on_tap RIGHT_SHIFT SLASH  &trans
-&trans      &trans                                   &trans                      &not_exist                     &not_exist           &trans               &trans      &trans      &trans            &not_exist    &not_exist            &trans                &trans                                 &trans
+&not_exist  &not_exist                               &not_exist                 &not_exist                     &not_exist           &not_exist                                   &not_exist        &not_exist    &not_exist           &not_exist            &not_exist                             &not_exist
+&trans      &hm LC(LEFT_SHIFT) JP_SQT                &hm LC(LEFT_ALT) JP_DQUOT  &hm LS(LEFT_ALT) LS(NUMBER_1)  &kp JP_LBKT          &kp JP_RBKT                                  &kp JP_YEN        &kp JP_UNDER  &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O   &hm RS(RIGHT_CONTROL) LS(NUMBER_5)     &trans
+&trans      &mt_exit_AML_on_tap LCTRL JP_AT          &hm LEFT_ALT SEMICOLON     &hm LEFT_GUI LS(NUMBER_4)      &hm_s JP_LT JP_LPAR  &hm_s JP_GT JP_RPAR  &not_exist  &not_exist  &kp LS(NUMBER_3)  &none         &hm RIGHT_GUI K      &hm RIGHT_ALT JP_BQT  &mt_exit_AML_on_tap RCTRL JP_TILDE     &trans
+&trans      &mt_exit_AML_on_tap LEFT_SHIFT JP_CARET  &kp JP_AST                 &kp JP_COLON                   &kp JP_LBRACE        &kp JP_RBRACE        &trans      &trans      &kp JP_AMPS       &kp JP_PIPE   &none                &none                 &mt_exit_AML_on_tap RIGHT_SHIFT SLASH  &trans
+&trans      &trans                                   &trans                     &not_exist                     &not_exist           &trans               &trans      &trans      &trans            &not_exist    &not_exist           &trans                &trans                                 &trans
             >;
         };
 
