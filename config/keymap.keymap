@@ -327,11 +327,11 @@
 
         L3_MML {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist     &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans         &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &kp RC(C)   &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &kp RC(V)      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp RC(X)   &trans      &trans       &trans      &kp RC(RS(V))  &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans         &trans
             >;
         };
 
