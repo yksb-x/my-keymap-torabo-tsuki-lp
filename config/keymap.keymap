@@ -311,7 +311,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans                              &kp N5           &kp N6       &kp N7        &kp N8      &kp N9      &trans
 &trans      &trans      &trans      &mo 4       &mo 3       &mo 6       &not_exist  &not_exist  &hm_s PERIOD N0  &kp N1       &kp N2        &kp N3      &kp N4      &trans
 &trans      &trans      &trans      &trans      &mo 5       &mo 7       &trans      &trans      &kp JP_EQUAL     &kp JP_PLUS  &kp JP_MINUS  &kp JP_AST  &kp SLASH   &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans           &not_exist   &not_exist    &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &kp BSPC    &trans           &not_exist   &not_exist    &trans      &trans      &trans
             >;
         };
 
