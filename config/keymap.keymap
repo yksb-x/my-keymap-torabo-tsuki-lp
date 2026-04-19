@@ -406,7 +406,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 11      &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(A)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
             >;
         };
 
@@ -416,7 +416,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 12      &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(B)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
             >;
         };
 
@@ -426,7 +426,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &to 0       &trans      &trans      &trans      &trans      &trans      &trans
-&kp LS(C)   &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans
             >;
         };
 
