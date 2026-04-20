@@ -54,14 +54,14 @@
             <&kp DOWN_ARROW>,
             <&kp UP_ARROW>;
 
-        tick = <20>;
+        tick = <10>;
         wait-ms = <0>;
-        tap-ms = <10>;
-        mode = <1>;
-        threshold = <3>;
+        tap-ms = <0>;
+        mode = <2>;
+        threshold = <1>;
 
         // max_threshold = <200>
-        // max_pending_activations = <10>
+        // max_pending_activations = <5>
     };
 };
 
@@ -317,11 +317,11 @@
 
         L2_AML {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist     &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans         &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &kp RC(C)   &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &kp RC(V)      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp RC(X)   &trans      &trans       &trans      &kp RC(RS(V))  &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans         &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
             >;
         };
 
