@@ -22,8 +22,8 @@
         layer     = <17 18>;          /* 縦スクロール用のレイヤー番号 */
 
         /* 後段の zip_scroll_scaler の引数と合わせる */
-        scale     = <4>;
-        scale-div = <675>;
+        scale     = <1>;
+        scale-div = <5>;
 
         /* オプション: Shiftを押している間だけ出力軸を反転 */
         swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
