@@ -10,22 +10,6 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer 2 250>; };
 
 
-/ {
-    scroll_inertia_v: scroll_inertia_v {
-        compatible = "zmk,input-processor-scroll-inertia";
-        #input-processor-cells = <0>;
-
-        /* axis: 0 = 両軸（自由2D）,
-                  1 = Y軸のみ（縦スクロール）,
-                  2 = X軸のみ（横スクロール） */
-        axis      = <1>;
-        layer     = <17>;          /* 縦スクロール用のレイヤー番号 */
-
-        /* 後段の zip_scroll_scaler の引数と合わせる */
-        scale     = <1>;
-        scale-div = <5>;
-    };
-};
 
 &zip_temp_layer {
     require-prior-idle-ms = <350>;
@@ -102,7 +86,6 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
-            &scroll_inertia_v
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
         >;
