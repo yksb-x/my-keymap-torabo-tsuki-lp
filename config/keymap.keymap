@@ -68,6 +68,25 @@
     };
 };
 
+/ {
+    scroll_inertia_v: scroll_inertia_v {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+
+        /* axis: 0 = both (free 2D),
+                  1 = Y only (vertical scroll),
+                  2 = X only (horizontal scroll) */
+        axis      = <1>;
+        layer     = <17>;          /* your vertical-scroll layer */
+
+        /* Match the downstream zip_scroll_scaler arguments */
+        scale     = <1>;
+        scale-div = <5>;
+
+    };
+};
+
+
 // 右トラボ
 
 &pointing_listener {
@@ -86,6 +105,7 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
+            &scroll_inertia_v
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
         >;
