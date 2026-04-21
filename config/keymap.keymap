@@ -31,8 +31,7 @@
         /* オプション: 右GUIを押している間だけ両軸フリー （2Dスクロール） */
         unlock-mod = <MOD_RGUI>;
     };
-
-
+};
 
 &zip_temp_layer {
     require-prior-idle-ms = <350>;
