@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/sekigon-gonnoc
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: mjmjm0101
+      url-base: https://github.com/mjmjm0101
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -31,6 +33,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    - name: zmk-input-processor-scroll-inertia
+      remote: mjmjm0101
       revision: main
   self:
     path: config
