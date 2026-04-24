@@ -311,7 +311,7 @@
 &none                   &none                             &none               &not_exist          &not_exist          &lt 1 SPACE         &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 5 ENTER          &not_exist           &not_exist           &none                &none                                 &none
             >;
         };
-j
+
         L1_Num {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist       &not_exist   &not_exist    &not_exist  &not_exist  &not_exist
