@@ -324,7 +324,7 @@
 &kp LG(LC(LEFT_ARROW))  &hm LC(LEFT_SHIFT) Q              &hm LC(LEFT_ALT) W  &hm LS(LEFT_ALT) E  &hm LS(LEFT_GUI) R  &kp T                                                        &kp Y                &hm RS(RIGHT_GUI) U  &hm RS(RIGHT_ALT) I  &hm RC(RIGHT_ALT) O  &hm RS(RIGHT_CONTROL) P               &kp RG(RC(RIGHT_ARROW))
 &kp LA(LS(ESC))         &mt_exit_AML_on_tap LCTRL A       &hm LEFT_ALT S      &hm LEFT_GUI D      &hm LA(LEFT_GUI) F  &hm LC(LEFT_GUI) G  &not_exist          &not_exist           &hm RC(RIGHT_GUI) H  &hm RA(RIGHT_GUI) J  &hm RIGHT_GUI K      &hm RIGHT_ALT L      &mt_exit_AML_on_tap RCTRL MINUS       &kp RA(ESC)
 &kp LC(PAGE_UP)         &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X               &kp C               &kp V               &kp B               &to 0               &to 10               &kp N                &kp M                &kp COMMA            &kp DOT              &mt_exit_AML_on_tap RIGHT_SHIFT FSLH  &kp RC(PAGE_DOWN)
-&none                   &none                             &none               &not_exist          &not_exist          &lt 1 SPACE         &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &lt 5 ENTER          &not_exist           &not_exist           &none                &none                                 &none
+&none                   &none                             &none               &not_exist          &not_exist          &hm_s 1 SPACE       &mt LANGUAGE_1 TAB  &mt LANGUAGE_2 BSPC  &hm_s 5 ENTER        &not_exist           &not_exist           &none                &none                                 &none
             >;
         };
 
