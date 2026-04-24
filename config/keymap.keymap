@@ -1,15 +1,13 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "keys_ja.h"
+#include <dt-bindings/zmk/modifiers.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/modifiers.h>
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 2 250>; };
-
-
 
 &zip_temp_layer {
     require-prior-idle-ms = <350>;
@@ -24,6 +22,11 @@
         36 // ;?
         40 // ／?
     >;
+};
+
+&mt {
+    tapping-term-ms = <150>;
+    quick-tap-ms = <135>;
 };
 
 / {
@@ -76,16 +79,15 @@
         /* axis: 0 = both (free 2D),
                   1 = Y only (vertical scroll),
                   2 = X only (horizontal scroll) */
-        axis      = <1>;
-        layer     = <17>;          /* your vertical-scroll layer */
 
+        axis = <1>;
+        layer = <17>;          /* your vertical-scroll layer */
         /* Match the downstream zip_scroll_scaler arguments */
-        scale     = <1>;
-        scale-div = <5>;
 
+        scale = <1>;
+        scale-div = <5>;
     };
 };
-
 
 // 右トラボ
 
