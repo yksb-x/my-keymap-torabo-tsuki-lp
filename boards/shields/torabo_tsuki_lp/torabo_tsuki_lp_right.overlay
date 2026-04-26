@@ -4,32 +4,6 @@
 
 #include <dt-bindings/zmk/modifiers.h>
 
-
-/ {
-    scroll_inertia_v: scroll_inertia_v {
-        compatible = "zmk,input-processor-scroll-inertia";
-        #input-processor-cells = <0>;
-
-        /* axis: 0 = both (free 2D),
-                  1 = Y only (vertical scroll),
-                  2 = X only (horizontal scroll) */
-        axis      = <1>;
-        layer     = <17>;          /* your vertical-scroll layer */
-
-        /* Match the downstream zip_scroll_scaler arguments */
-        scale     = <4>;
-        scale-div = <675>;
-
-        /* Optional: hold Shift to swap the output axis */
-        swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
-
-        /* Optional: hold Right-GUI to free both axes (2D scroll) */
-        // unlock-mod = <MOD_RGUI>;
-    };
-
-};
-
-
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
