@@ -14,7 +14,7 @@
                   1 = Y only (vertical scroll),
                   2 = X only (horizontal scroll) */
         axis      = <1>;
-        layer     = <4>;          /* your vertical-scroll layer */
+        layer     = <17 18>;          /* your vertical-scroll layer */
 
         /* Match the downstream zip_scroll_scaler arguments */
         scale     = <4>;
@@ -24,20 +24,9 @@
         swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
 
         /* Optional: hold Right-GUI to free both axes (2D scroll) */
-        unlock-mod = <MOD_RGUI>;
+        // unlock-mod = <MOD_RGUI>;
     };
 
-    /* This dedicated free-2D layer is OPTIONAL — the unlock-mod above
-     * already gives you 2D scrolling from inside the vertical layer.
-     * Pick whichever style you prefer; you don't need both. */
-    scroll_inertia_free: scroll_inertia_free {
-        compatible = "zmk,input-processor-scroll-inertia";
-        #input-processor-cells = <0>;
-        axis      = <0>;          /* both axes — diagonal scroll allowed */
-        layer     = <5>;          /* free 2D scroll layer (e.g. canvas pan) */
-        scale     = <4>;
-        scale-div = <675>;
-    };
 };
 
 
