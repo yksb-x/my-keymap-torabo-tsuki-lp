@@ -14,7 +14,7 @@
                   1 = Y only (vertical scroll),
                   2 = X only (horizontal scroll) */
         axis      = <1>;
-        layer     = <17 18>;          /* your vertical-scroll layer */
+        layer     = <17>;          /* your vertical-scroll layer */
 
         /* Match the downstream zip_scroll_scaler arguments */
         scale     = <4>;
