@@ -165,10 +165,3 @@
     kscan = <&kscan0>;
     transform = <&size_l_transform>;
 };
-
-/* 慣性設定の定義 */
-/ {
-    scroll_inertia: scroll_inertia {
-        compatible = "zmk,input-processor-scroll-inertia";
-    };
-};
