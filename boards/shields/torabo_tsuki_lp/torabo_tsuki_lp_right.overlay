@@ -32,6 +32,7 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
+            &scroll_inertia_h18
             &zip_scroll_x_scaler 1 5
             &zip_scroll_y_scaler 0 3
         >;
@@ -42,7 +43,7 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
-            &scroll_inertia_v
+            &scroll_inertia_v17
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
         >;
@@ -94,6 +95,7 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
+            &scroll_inertia_v18
             &zip_scroll_x_scaler 0 3
             &zip_scroll_y_scaler 1 5
         >;
@@ -104,7 +106,7 @@
         input-processors = <
             &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
             &zip_xy_to_scroll_mapper
-            &scroll_inertia_h
+            &scroll_inertia_h17
             &zip_scroll_x_scaler 1 5
             &zip_scroll_y_scaler 0 3
         >;
