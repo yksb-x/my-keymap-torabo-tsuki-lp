@@ -24,7 +24,7 @@
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
-        track_remainders;
+        track-remainders;
         bindings =
             <&kp LEFT_ARROW>,
             <&kp RIGHT_ARROW>,
