@@ -4,13 +4,6 @@
 
 #include <dt-bindings/zmk/modifiers.h>
 
-/ {
-    scroll_inertia: scroll_inertia {
-        compatible = "zmk,input-processor-scroll-inertia";
-        // 必要に応じてここでパラメータを微調整できます
-        // 例: friction = <10>;
-    };
-};
 
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
