@@ -38,7 +38,6 @@
         x_scroll {
             bindings = <&mo 18>;
             key-positions = <35 34>;
-            layers = <2 3>;
             require-prior-idle-ms = <50>;
         };
 
