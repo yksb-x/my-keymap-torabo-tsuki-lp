@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/modifiers.h>
 #include "common.dtsi"
+#include <behaviors.dtsi>
+
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 2 250>; };
 
