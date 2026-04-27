@@ -42,3 +42,47 @@
         // max_pending_activations = <5>
     };
 };
+
+
+
+#include <dt-bindings/zmk/modifiers.h>
+
+/ {
+    scroll_inertia_v: scroll_inertia_v {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+
+        /* axis: 0 = both (free 2D),
+                  1 = Y only (vertical scroll),
+                  2 = X only (horizontal scroll) */
+        axis      = <1>;
+        layer     = <17>;          /* your vertical-scroll layer */
+
+        /* Match the downstream zip_scroll_scaler arguments */
+        scale     = <4>;
+        scale-div = <675>;
+
+        /* Optional: hold Shift to swap the output axis */
+        swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
+
+    scroll_inertia_h: scroll_inertia_h {
+        compatible = "zmk,input-processor-scroll-inertia";
+        #input-processor-cells = <0>;
+
+        /* axis: 0 = both (free 2D),
+                  1 = Y only (vertical scroll),
+                  2 = X only (horizontal scroll) */
+        axis      = <2>;
+        layer     = <17>;          /* your vertical-scroll layer */
+
+        /* Match the downstream zip_scroll_scaler arguments */
+        scale     = <4>;
+        scale-div = <675>;
+
+        /* Optional: hold Shift to swap the output axis */
+        swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
+};
