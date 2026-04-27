@@ -59,8 +59,8 @@
         layer     = <17>;          /* your vertical-scroll layer */
 
         /* Match the downstream zip_scroll_scaler arguments */
-        scale     = <4>;
-        scale-div = <675>;
+        scale     = <1>;
+        scale-div = <5>;
 
         /* Optional: hold Shift to swap the output axis */
         swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
@@ -78,8 +78,8 @@
         layer     = <17>;          /* your vertical-scroll layer */
 
         /* Match the downstream zip_scroll_scaler arguments */
-        scale     = <4>;
-        scale-div = <675>;
+        scale     = <1>;
+        scale-div = <5>;
 
         /* Optional: hold Shift to swap the output axis */
         swap-mod  = <(MOD_LSFT|MOD_RSFT)>;
