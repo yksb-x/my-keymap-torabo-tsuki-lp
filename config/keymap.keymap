@@ -1,3 +1,15 @@
+/*
+ * ZMK Keymap Configuration
+ * 
+ * Keymap Name: torabo-tsuki lp(M) dual-torabo構成
+ * Author: やきそば
+ * 
+ * 特徴:
+ * - Home Row Mods (hm): ホームポジションに修飾キーを配置
+ * - AML (Auto Mouse Layer): マウス操作層からの自動復帰マクロ
+ * - 日本語配列対応: keys_ja.h を使用した記号定義
+ */
+
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "keys_ja.h"
@@ -7,40 +19,52 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&mt {
-    tapping-term-ms = <150>;
-    quick-tap-ms = <250>;
-};
+/* --------------------------------------------------------------------------
+ * 全般設定 (Global Settings)
+ * -------------------------------------------------------------------------- */
 
+// オーバーライド
+&mt {
+    tapping-term-ms = <150>; // 長押しの判定時間
+    quick-tap-ms = <250>;    // 素早く2回叩いた時に連続入力として扱う設定
+};
 &lt {
-    tapping-term-ms = <150>;
-    quick-tap-ms = <250>;
+    tapping-term-ms = <150>; // 長押しの判定時間
+    quick-tap-ms = <250>;    // 素早く2回叩いた時に連続入力として扱う設定
 };
 
 
 / {
+    /* --------------------------------------------------------------------------
+     * コンボ設定 (Combos)
+     * 特定のキーを同時押しした際のアクション
+     * -------------------------------------------------------------------------- */
     combos {
         compatible = "zmk,combos";
 
+        // 13, 14キー(qw)同時押しで ESC
         Esc {
             bindings = <&kp ESC>;
             key-positions = <13 14>;
             slow-release;
-            layers = <0>;
         };
 
+        // レイヤー7(BT)にて 47, 48, 49, 50キー(jkl-)同時押しで Bluetooth情報初期化
         BTclr {
             bindings = <&bt BT_CLR>;
             key-positions = <47 48 49 50>;
+            slow-release;
             layers = <7>;
         };
 
+        // 35, 34キー(kl)で横スクロールレイヤー(18)へ
         x_scroll {
             bindings = <&mo 18>;
             key-positions = <35 34>;
             require-prior-idle-ms = <50>;
         };
 
+        // 58, 59きーで BackSpace（連続入力用。でもダブルタップでできるので必要ないかも）
         BackSpace {
             bindings = <&kp BACKSPACE>;
             key-positions = <58 59>;
@@ -48,7 +72,11 @@
         };
     };
 
+    /* --------------------------------------------------------------------------
+     * マクロ設定 (Macros)
+     * -------------------------------------------------------------------------- */
     macros {
+        // レイヤー2 (AML: Auto Mouse Layer) を強制OFFにする
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -58,6 +86,7 @@
             label = "exit_AML";
         };
 
+        // パラメータ付きマクロ: キーを入力した後に exit_AML を実行する
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -68,16 +97,17 @@
         };
     };
 
+    /* --------------------------------------------------------------------------
+     * カスタム挙動 (Behaviors)
+     * -------------------------------------------------------------------------- */
     behaviors {
-        // "not_exist" 物理的に存在しないキーを区別するための挙動
-
+        // 物理的に存在しないキー用の透過設定
         not_exist: not_exist {
             compatible = "zmk,behavior-transparent";
             #binding-cells = <0>;
         };
 
-        // "hm" (Home Row Mods) という名前のカスタム挙動を作る
-
+        // Home Row Mods: 長押しで修飾キー、タップで通常文字
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -87,6 +117,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+        // Home Row Mods (高速入力用・短めの判定)
         hm_s: hm_s {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -96,6 +127,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+        // 特定レイヤーをOFFにするトグル挙動
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -103,28 +135,35 @@
             toggle-mode = "off";
         };
 
+        // タップ時にAML(マウス層)を解除しつつキー入力する特殊なHold-Tap
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp_exit_AML>;
-
             #binding-cells = <2>;
             tapping-term-ms = <299>;
             quick-tap-ms = <175>;       // ② 連打時の判定（任意）
             flavor = "tap-preferred";   // ★③ ここが最重要！
         };
 
+        // マウスボタン用レイヤーホールド (長押しでレイヤー、タップでクリック)
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&mkp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
     };
 
+
+    /* --------------------------------------------------------------------------
+     * キーマップ (Keymaps)
+     * -------------------------------------------------------------------------- */
     keymap {
         compatible = "zmk,keymap";
 
+        // [0] メインレイヤー: QWERTY配列
+        // A-Ctrl、Z-Shift、S‐Alt、D-Win（右手も対称に配置）
+        // 親指にはスペース(レイヤー)、タブ(日本語)、BackSpace(英数)、エンター(レイヤー)
         L0_Main {
             bindings = <
 &not_exist              &not_exist                        &not_exist          &not_exist          &not_exist          &not_exist                                                   &not_exist           &not_exist           &not_exist           &not_exist           &not_exist                            &not_exist
@@ -135,6 +174,8 @@
             >;
         };
 
+        // [1] 数字レイヤー (右手に0-9を二段配置)
+        // 左手は親指+ホームポジション周辺の組み合わせで他レイヤーへのハブとしている。
         L1_Num {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist       &not_exist   &not_exist    &not_exist  &not_exist  &not_exist
@@ -145,6 +186,7 @@
             >;
         };
 
+        // [2] AML (Auto Mouse Layer): マウス操作用
         L2_AML {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
@@ -155,6 +197,7 @@
             >;
         };
 
+        // [3] MML (Mouse & Macro Layer): コピー、ペースト等
         L3_MML {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist     &not_exist
@@ -165,6 +208,7 @@
             >;
         };
 
+        // [4] カーソルレイヤー: 矢印キー、Home/End等
         L4_Cursor {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist        &not_exist                                &not_exist  &not_exist      &not_exist      &not_exist       &not_exist     &not_exist
@@ -175,6 +219,8 @@
             >;
         };
 
+        // [5] 記号レイヤー: 下記の記事を参考に、連想しやすい記号配列を設定
+        // https://qiita.com/rall_alice/items/1c5cafc15dc8a7ad6236
         L5_Symbol {
             bindings = <
 &not_exist  &not_exist                               &not_exist                 &not_exist                     &not_exist           &not_exist                                   &not_exist        &not_exist    &not_exist           &not_exist            &not_exist                             &not_exist
@@ -185,6 +231,7 @@
             >;
         };
 
+        // [6] ファンクションレイヤー: F1-F12（おまけで音量調節）
         L6_Func {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist    &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -195,6 +242,7 @@
             >;
         };
 
+        // [7] Bluetoothレイヤー: 接続先の切り替え・解除
         L7_BT {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist     &not_exist     &not_exist     &not_exist     &not_exist     &not_exist
@@ -205,6 +253,7 @@
             >;
         };
 
+        // [8] 空レイヤー (予約)
         L8_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -215,6 +264,7 @@
             >;
         };
 
+        // [9] 空レイヤー (予約)
         L9_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -225,6 +275,8 @@
             >;
         };
 
+        // [10] 左右トラボ挙動レイヤーをトグル切り替え（0→10→11→12→0）
+        // 左トラボ：矢印キー入力、右トラボ：通常
         L10_L_Arrow_R_Torabo {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -235,6 +287,8 @@
             >;
         };
 
+        // [11] 左右トラボ挙動レイヤーをトグル切り替え（0→10→11→12→0）
+        // 左トラボ：通常、右トラボ：矢印入力
         L11_L_Torabo_R_Arrow {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -245,6 +299,8 @@
             >;
         };
 
+        // [11] 左右トラボ挙動レイヤーをトグル切り替え（0→10→11→12→0）
+        // 左トラボ：通常、右トラボ：矢印入力
         L12_L_Blank_R_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -255,6 +311,7 @@
             >;
         };
 
+        // [13] 空レイヤー (予約)
         L13_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -265,6 +322,7 @@
             >;
         };
 
+        // [14] 空レイヤー (予約)
         L14_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -275,6 +333,7 @@
             >;
         };
 
+        // [15] 空レイヤー (予約)
         L15_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -285,6 +344,7 @@
             >;
         };
 
+        // [16] 空レイヤー (予約)
         L16_Blank {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
@@ -295,7 +355,9 @@
             >;
         };
 
-        L17_Yscroll {
+        // [17] Yscroll (右垂直スクロール)
+        // 左トラボはXスクロール
+        L17_L_Xscroll_R_Yscroll {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
@@ -305,7 +367,9 @@
             >;
         };
 
-        L18_Xscroll {
+        // [18] Xscroll (右水平スクロール)
+        // 左トラボはYスクロール
+        L18_L_Yscroll_R_Xscroll {
             bindings = <
 &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
