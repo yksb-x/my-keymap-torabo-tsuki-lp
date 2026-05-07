@@ -1,43 +1,59 @@
-/* config/common.dtsi */
+/* 
+ * boards/shields/torabo_tsuki_lp/common.dtsi 
+ * 
+ * ポインティングデバイス（トラックボール等）の入力処理設定
+ * ZMKのInput Processorを使用して、感度調整や特殊な挙動を定義します。
+ */
+
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/modifiers.h>
 
 / {
+    /* --------------------------------------------------------------------------
+     * 入力スケーラー (Input Processors: Scaler)
+     * 入力信号の感度や解像度を調整します。
+     * -------------------------------------------------------------------------- */
     input_processors {
+        // 横スクロールの感度調整
         zip_scroll_x_scaler: zip_scroll_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_HWHEEL>;
-            track-remainders;
+            codes = <INPUT_REL_HWHEEL>; // 水平ホイール信号
+            track-remainders;           // 端数を保持して細かい動きを正確に反映
         };
 
+        // 縦スクロールの感度調整
         zip_scroll_y_scaler: zip_scroll_y_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_WHEEL>;
+            codes = <INPUT_REL_WHEEL>;    // 垂直ホイール信号
             track-remainders;
         };
     };
 };
 
 / {
+    /* --------------------------------------------------------------------------
+     * キーバインド変換 (Input Processor: Keybind)
+     * トラックボールの動きを「矢印キー」の入力に変換する設定
+     * -------------------------------------------------------------------------- */
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
         bindings =
-            <&kp LEFT_ARROW>,
-            <&kp RIGHT_ARROW>,
-            <&kp DOWN_ARROW>,
-            <&kp UP_ARROW>;
+            <&kp LEFT_ARROW>,   // X軸 マイナス方向
+            <&kp RIGHT_ARROW>,  // X軸 プラス方向
+            <&kp DOWN_ARROW>,   // Y軸 プラス方向
+            <&kp UP_ARROW>;     // Y軸 マイナス方向
 
-        tick = <10>;
+        tick = <10>;        // 判定の間隔（ms）
         wait-ms = <0>;
         tap-ms = <0>;
-        mode = <2>;
-        threshold = <1>;
+        mode = <2>;         // モード2: 移動量に応じた連続入力
+        threshold = <1>;    // 変換を開始する閾値（1から反応）
 
         // max_threshold = <200>
         // max_pending_activations = <5>
@@ -46,22 +62,30 @@
 
 
 / {
+    /* --------------------------------------------------------------------------
+     * スクロール慣性・レイヤー連動設定 (Input Processor: Scroll Inertia)
+     * 特定のレイヤー（17, 18）でスクロール動作を有効化し、速度を調整します。
+     * -------------------------------------------------------------------------- */
+
+    // --- レイヤー17 (Y-scroll想定) の設定 ---
     scroll_inertia_v17: scroll_inertia_v17 {
         compatible = "zmk,input-processor-scroll-inertia";
         #input-processor-cells = <0>;
-        axis      = <1>;
-        layer     = <17>;
-        scale     = <1>;
-        scale-div = <5>;
+        axis      = <1>;    // 垂直方向
+        layer     = <17>;   // レイヤー17が有効な時のみ動作
+        scale     = <1>;    // 分子
+        scale-div = <5>;    // 分母（この場合は1/5の速度に減速）
     };
     scroll_inertia_h17: scroll_inertia_h17 {
         compatible = "zmk,input-processor-scroll-inertia";
         #input-processor-cells = <0>;
-        axis      = <2>;
+        axis      = <2>;    // 水平方向
         layer     = <17>;
         scale     = <1>;
         scale-div = <5>;
     };
+
+    // --- レイヤー18 (X-scroll想定) の設定 ---
     scroll_inertia_v18: scroll_inertia_v18 {
         compatible = "zmk,input-processor-scroll-inertia";
         #input-processor-cells = <0>;
