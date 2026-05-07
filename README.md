@@ -3,6 +3,7 @@
 せきごん氏の左右分割キーボード [torabo-tsuki LP](https://github.com/sekigon-gonnoc/torabo-tsuki-lp)用のZMKファームウェア
 
 | Keyboard | torabo-tsuki lp(M) dual-torabo構成 |
+| --- | --- |
 | Author | やきそば |
 
 ## 特徴:
