@@ -1,3 +1,10 @@
+/*
+ * boards/shields/torabo_tsuki_lp/torabo_tsuki_lp_right.overlay
+ * 
+ * デュアル・トラックボールの動作定義
+ * 左右それぞれのボールに対し、レイヤーごとの挙動（移動・スクロール・キー入力）を割り当てます。
+ */
+
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -5,43 +12,51 @@
 #include "common.dtsi"
 #include <behaviors.dtsi>
 
-
-&mkp_input_listener { input-processors = <&zip_temp_layer 2 250>; };
+/* --------------------------------------------------------------------------
+ * 自動レイヤー切り替え (Auto Mouse Layer) の動作設定
+ * -------------------------------------------------------------------------- */
+&mkp_input_listener { 
+    // マウスボタンが押されたらレイヤー2(AML)を250ms有効にする
+    input-processors = <&zip_temp_layer 2 250>; 
+};
 
 &zip_temp_layer {
-    require-prior-idle-ms = <350>;
+    require-prior-idle-ms = <350>; // 350msアイドル状態でないと自動発動しない（誤爆防止）
+    // 下記のキー（ホームロー等）を打鍵している最中は、マウスによるレイヤー遷移を除外する
     excluded-positions = <
-        25 // A?
-        26 // S?
-        27 // D?
-        39 // Z?
-        33 // J?
-        34 // K?
-        35 // L?
-        36 // ;?
-        40 // ／?
+        25 // A
+        26 // S
+        27 // D
+        39 // Z
+        33 // J
+        34 // K
+        35 // L
+        36 // ;
+        40 // /
     >;
 };
 
-
-// 右トラボ
-
+/* --------------------------------------------------------------------------
+ * 右トラックボールの設定 (Pointing Listener)
+ * -------------------------------------------------------------------------- */
 &pointing_listener {
+    // レイヤー18：横スクロールを優先するモード
     scroller_R18 {
         layers = <18>;
         input-processors = <
-            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
-            &zip_xy_to_scroll_mapper
-            &scroll_inertia_h18
-            &zip_scroll_x_scaler 1 5
-            &zip_scroll_y_scaler 0 3
+            &zip_xy_scaler 1 1             // 移動量を等倍に
+            &zip_xy_to_scroll_mapper       // XY移動をスクロール信号に変換
+            &scroll_inertia_h18            // 慣性設定適用
+            &zip_scroll_x_scaler 1 5       // 横スクロール速度調整
+            &zip_scroll_y_scaler 0 3       // 縦スクロール速度抑制
         >;
     };
 
+    // レイヤー17：縦スクロールを優先するモード
     scroller_R17 {
         layers = <17>;
         input-processors = <
-            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
+            &zip_xy_scaler 1 1
             &zip_xy_to_scroll_mapper
             &scroll_inertia_v17
             &zip_scroll_x_scaler 0 3
@@ -49,30 +64,32 @@
         >;
     };
 
+    // レイヤー11：ボールの動きを「矢印キー」に変換 (Arrow Ball)
     arrowball_L11 {
         status = "okay";
         layers = <11>;
         input-processors = <
-            &zip_scroll_x_scaler 3 2 
+            &zip_scroll_x_scaler 3 2       // 反応感度調整
             &zip_scroll_y_scaler 1 2
-            &zip_keybind_keys
+            &zip_keybind_keys              // common.dtsiで定義した矢印キー変換を適用
         >;
-
         process-next;
     };
 
+    // レイヤー11での通常のマウス移動を停止させる（矢印キー入力のみにするため）
     arrowball_prevent_L11 {
         layers = <11>;
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
+    // レイヤー10/0：粗動モード (通常のマウス操作)
     sodou_torabo_L10 {
         status = "okay";
         layers = <10>;
         input-processors = <
             &zip_xy_scaler 1 1
-            &zip_temp_layer 2 1500
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_temp_layer 2 1500         // 動かすと1.5秒間レイヤー2(AML)を維持
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) // センサー向きの反転
         >;
     };
 
@@ -87,13 +104,15 @@
     };
 };
 
-//左トラボ
-
+/* --------------------------------------------------------------------------
+ * 左トラックボールの設定 (Split Listener)
+ * -------------------------------------------------------------------------- */
 &pointing_device_split_listener {
+    // 右ボールと対照的な設定（L17/18の縦横役割を入れ替え）
     scroller_L18 {
         layers = <18>;
         input-processors = <
-            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
+            &zip_xy_scaler 1 1
             &zip_xy_to_scroll_mapper
             &scroll_inertia_v18
             &zip_scroll_x_scaler 0 3
@@ -104,7 +123,7 @@
     scroller_L17 {
         layers = <17>;
         input-processors = <
-            &zip_xy_scaler 1 1         // 動きを1倍（有効）に戻す
+            &zip_xy_scaler 1 1
             &zip_xy_to_scroll_mapper
             &scroll_inertia_h17
             &zip_scroll_x_scaler 1 5
@@ -130,7 +149,6 @@
             &zip_scroll_y_scaler 1 2
             &zip_keybind_keys
         >;
-
         process-next;
     };
 
@@ -139,26 +157,21 @@
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
+    // L0：微動モード (感度を極限まで下げて精密な操作を可能にする)
     bidou_torabo_L0 {
         status = "okay";
         layers = <0>;
         input-processors = <
-            &zip_xy_scaler 1 50
+            &zip_xy_scaler 1 50           // 1/50に減速、超精密操作用
             &zip_temp_layer 2 1500
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         >;
     };
 };
 
-
-&size_s_transform {
-    col-offset = <7>;
-};
-
-&size_m_transform {
-    col-offset = <7>;
-};
-
-&size_l_transform {
-    col-offset = <7>;
-};
+/* --------------------------------------------------------------------------
+ * 物理マトリックス変換のオフセット設定
+ * -------------------------------------------------------------------------- */
+&size_s_transform { col-offset = <7>; };
+&size_m_transform { col-offset = <7>; };
+&size_l_transform { col-offset = <7>; };
