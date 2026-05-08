@@ -19,7 +19,7 @@
     // マウスボタンが押されたらレイヤー2(AML)を指定秒数有効にする
     // 短すぎるとAMLでダブルクリックできなくなる。
     // 自然にダブルクリックできるギリギリの短さにすることで、マウスクリック後の文字入力誤爆を減らす
-    input-processors = <&zip_temp_layer 2 185>; 
+    input-processors = <&zip_temp_layer 2 175>; 
 };
 
 &zip_temp_layer {
