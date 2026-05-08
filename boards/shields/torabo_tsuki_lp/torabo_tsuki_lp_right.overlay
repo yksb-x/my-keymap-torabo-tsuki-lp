@@ -18,18 +18,20 @@
 &mkp_input_listener { 
     // マウスボタンが押されたらレイヤー2(AML)を250ms有効にする
     // 誤爆が多いので試験的に1msに変更
-    input-processors = <&zip_temp_layer 2 1>; 
+    input-processors = <&zip_temp_layer 2 250>; 
 };
 
 &zip_temp_layer {
-    require-prior-idle-ms = <350>; // 350msアイドル状態でないと自動発動しない（誤爆防止）
-    // 下記のキー（ホームロー等）を打鍵している最中は、マウスによるレイヤー遷移を除外する
+    // 指定時間以内にキー入力がある場合はAMLにならない。（文字入力中の誤爆防止）
+    require-prior-idle-ms = <350>; 
+
+    // 下記のキーをおしてもAMLを解除しない。
     excluded-positions = <
         25 // A
         26 // S
         27 // D
         39 // Z
-        33 // J
+        // 33 Jを除外してみる
         34 // K
         35 // L
         36 // ;
