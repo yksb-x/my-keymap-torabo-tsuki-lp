@@ -17,8 +17,7 @@
  * -------------------------------------------------------------------------- */
 &mkp_input_listener { 
     // マウスボタンが押されたらレイヤー2(AML)を250ms有効にする
-    // 誤爆が多いので試験的に1msに変更
-    input-processors = <&zip_temp_layer 2 250>; 
+    input-processors = <&zip_temp_layer 2 200>; 
 };
 
 &zip_temp_layer {
