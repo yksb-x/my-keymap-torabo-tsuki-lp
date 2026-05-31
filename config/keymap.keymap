@@ -79,7 +79,7 @@
         };
 
         CapsLock {
-            bindings = <&kp CLCK>;
+            bindings = <&kp LS(CLCK)>;
             key-positions = <39 50>;
         };
     };
