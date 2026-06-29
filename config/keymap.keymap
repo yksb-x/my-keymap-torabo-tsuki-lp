@@ -72,15 +72,14 @@
 
         // 58, 59きーで BackSpace（連続入力用。でもダブルタップでできるので必要ないかも）
 
-        BackSpace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <58 59>;
-            layers = <0>;
-        };
-
         CapsLock {
             bindings = <&kp LS(CLCK)>;
             key-positions = <39 50>;
+        };
+
+        ExitAML {
+            bindings = <&to 0>;
+            key-positions = <33 28>;
         };
     };
 
