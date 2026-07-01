@@ -79,7 +79,7 @@
 
         ExitAML {
             bindings = <&cl_to0>;
-            key-positions = <33 34>;
+            key-positions = <33 60>;
         };
     };
 
@@ -100,6 +100,7 @@
         };
 
         // パラメータ付きマクロ: キーを入力した後に exit_AML を実行する
+
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -110,17 +111,15 @@
         };
 
         // コンボでこのマクロを実行し、AMLを強制解除
+
         cl_to0: cl_to0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <10>;
-            bindings
-                // 迷子になりやすい主要モディファイアのホールド状態を強制解除
-                = <&macro_release &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>
-                // すべてのレイヤースタックを破棄して、完全にレイヤー0へ遷移
-                , <&to 0>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &to 0>;
         };
     };
 
