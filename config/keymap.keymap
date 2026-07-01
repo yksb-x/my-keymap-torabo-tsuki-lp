@@ -79,7 +79,7 @@
 
         ExitAML {
             bindings = <&cl_to0>;
-            key-positions = <33 28>;
+            key-positions = <33 34>;
         };
     };
 
