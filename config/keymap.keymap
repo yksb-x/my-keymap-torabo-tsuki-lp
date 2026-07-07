@@ -60,6 +60,7 @@
             key-positions = <47 48 49 50>;
             slow-release;
             layers = <7>;
+            timeout-ms = <200>;
         };
 
         // 35, 34キー(kl)で横スクロールレイヤー(18)へ
@@ -80,6 +81,7 @@
         Exit_AML {
             bindings = <&cl_to0>;
             key-positions = <33 34 35 36>;
+            timeout-ms = <200>;
         };
     };
 
