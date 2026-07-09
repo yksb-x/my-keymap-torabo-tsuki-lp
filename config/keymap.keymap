@@ -106,17 +106,15 @@
             label = "KP_exit_AML";
         };
 
-        // コンボでこのマクロを実行し、AMLを強制解除
-
-        cl_to0: cl_to0 {
+        // レイヤー離脱用のダミーマクロ
+        exit_mouse: exit_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &to 0>;
+            tap-ms = <0>;
+            bindings = <&none>; // 何も送信しないが、キーイベントをここで消費する
         };
+
     };
 
     /* --------------------------------------------------------------------------
