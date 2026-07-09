@@ -181,6 +181,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        // レイヤー脱出専用のTap-Dance
+        exit_td: exit_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&none>; // 1タップで何も出力せずイベントを消化
+        };
     };
 
     /* --------------------------------------------------------------------------
