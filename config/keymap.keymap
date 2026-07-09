@@ -106,14 +106,15 @@
             label = "KP_exit_AML";
         };
 
-        // レイヤー離脱用のダミーマクロ
-
-        exit_mouse: exit_mouse {
+        // zip_temp_layer の状態を強制的に折り取るマクロ
+        exit_mouse_layer: exit_mouse_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&none>; // 何も送信しないが、キーイベントをここで消費する
+            bindings
+                = <&tog 2>  // オートマウスレイヤー（例: 2）を明示的にトグルOFF
+                ;
         };
     };
 
