@@ -183,13 +183,15 @@
         };
 
         // オートマウス脱出用の「超即時Hold」Behavior
+
         mo_exit: mo_exit {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";  // どんなに短く押しても Hold（レイヤー）を最優先
             tapping-term-ms = <0>;      // 0ms（押した瞬間に Hold 確定）
             quick-tap-ms = <0>;
-            bindings = <&mo>, <&none>;  // Holdで&mo、万が一Tap扱いになっても&none（Enterを防ぐ）
+            bindings = <&mo>, <&none>;
+  // Holdで&mo、万が一Tap扱いになっても&none（Enterを防ぐ）
         };
     };
 
@@ -231,11 +233,11 @@
 
         L2_AML {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &mo 3       &not_exist  &not_exist   &trans      &trans      &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist    &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans        &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans        &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans        &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &mo_exit 3 0  &not_exist  &not_exist   &trans      &trans      &trans
             >;
         };
 
