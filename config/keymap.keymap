@@ -234,7 +234,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &exit_td    &not_exist  &not_exist   &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &none       &not_exist  &not_exist   &trans      &trans      &trans
             >;
         };
 
