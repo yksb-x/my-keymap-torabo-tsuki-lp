@@ -182,13 +182,14 @@
             tapping-term-ms = <200>;
         };
 
-        // レイヤー脱出専用のTap-Dance
-
-        exit_td: exit_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&none>; // 1タップで何も出力せずイベントを消化
+        // オートマウス脱出用の「超即時Hold」Behavior
+        mo_exit: mo_exit {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";  // どんなに短く押しても Hold（レイヤー）を最優先
+            tapping-term-ms = <0>;      // 0ms（押した瞬間に Hold 確定）
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&none>;  // Holdで&mo、万が一Tap扱いになっても&none（Enterを防ぐ）
         };
     };
 
