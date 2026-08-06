@@ -83,6 +83,12 @@
             key-positions = <33 34 35>;
             layers = <3>;
         };
+
+        ToMML {
+            bindings = <&to 3>;
+            key-positions = <33 34 35>;
+            layers = <2>;
+        };
     };
 
     /* --------------------------------------------------------------------------
@@ -240,11 +246,11 @@
 
         L2_AML {
             bindings = <
-&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist     &not_exist
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans         &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &httl RCTRL 3  &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans         &trans
-&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans         &trans
+&not_exist  &not_exist  &not_exist  &not_exist  &not_exist  &not_exist                          &not_exist  &not_exist  &not_exist   &not_exist  &not_exist  &not_exist
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &not_exist  &not_exist  &trans      &mkp LCLK   &ml 17 MCLK  &mkp RCLK   &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans       &trans      &trans      &trans
+&trans      &trans      &trans      &not_exist  &not_exist  &trans      &trans      &trans      &trans      &not_exist  &not_exist   &trans      &trans      &trans
             >;
         };
 
