@@ -28,6 +28,7 @@
 
     // 下記のキーをおしてもAMLを解除しない。
     excluded-positions = <
+        20 // I
         25 // A
         26 // S
         27 // D
